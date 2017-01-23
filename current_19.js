@@ -15,7 +15,9 @@ var tipping_data = {
 
 function find_round_tips(round_no, a_list) {
     var round_chk = a_list[0][0];
-    for (var i = 0; i < a_list.length; i++) {
+    var i;
+    var len;
+    for (i = 0, len = a_list.length; i < len; i++) {
 	round_chk = a_list[i][0];
 	if (round_chk === round_no) {
 	    return i;
