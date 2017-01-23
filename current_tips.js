@@ -127,6 +127,5 @@ var final_scores = calculate_scores(round, fixtures, tips, id, admin);
 
 $(function () {
     $("span#score_user").html("lol");
-    $("span#score_user").html(round);
     $("span#score_opponent").html(final_scores[1]);
 });
