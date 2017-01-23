@@ -19,8 +19,7 @@ function find_round_tips(round_no, a_list) {
     var len;
     for (i = 0, len = a_list.length; i < len; i++) {
 	round_chk = a_list[i][0];
-	if (round_chk === round_no) {
-	    return "hello fred";
+	return round_chk;
     }
     return round_no;
 }
