@@ -22,7 +22,7 @@ function find_round_tips(round_no, a_list) {
 	if (round_chk === round_no) {
 	    return "hello fred";
     }
-    return round_num;
+    return round_no;
 }
 
 $(function () {
