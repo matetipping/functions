@@ -119,6 +119,7 @@ function get_this_id() {
 }
 
 $(function () {
+    $("span#score_user").html("lol");
     var round = tipping_data.round;
     var fixtures = tipping_data.fixtures;
     var tips = tipping_data.tips;
