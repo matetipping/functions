@@ -14,9 +14,11 @@ var tipping_data = {
 }
 
 function find_round_tips(round_no, a_list) {
-    var round_chk = a_list[0][0];
-    if (round_chk === round_no) {
-	return 5;
+    var round_chk = "";
+    for (var i = 0; i < a_list.length; i++) {
+	round_chk = a_list[i][0]
+	if (round_chk === round_no) {
+	    return i;
     }
     return round_num;
 }
