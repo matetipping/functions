@@ -15,7 +15,7 @@ $(function () {
 
 var tipping_data = {
     round: "R1",
-    admin: Administrator,
+    admin: "Administrator",
     tips: [
 	["R1", "Administrator", "CAR", 32, "HAW", 25, 0, 0],
 	["R1", "Daniel Terrington", "RIC", 3, "HAW", 34, 0, 0],
