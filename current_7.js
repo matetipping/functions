@@ -17,7 +17,7 @@ function find_round_tips (round, a_list) {
     var list = [];
     for (i = 0; i < a_list.length; i++) {
         if (a_list[i][0].equals(round)) {
-            list.append(a_list[i]);
+            list.push(a_list[i]);
         }
     }
     return list;
