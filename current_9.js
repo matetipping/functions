@@ -13,7 +13,7 @@ var tipping_data = {
     ]
 }
 
-function find_round_tips (round, a_list) {
+function find_round_tips(round, a_list) {
     var list = [];
     for (var i = 0; i < a_list.length; i++) {
         if (a_list[i][0] === round) {
@@ -24,6 +24,8 @@ function find_round_tips (round, a_list) {
 }
 
 $(function () {
-    $("span#score_user").html(find_round_tips(tipping_data.round, tipping_data.tips)[0][0]);
+    var x = find_round_tips(tipping_data.round, tipping_data.tips);
+    alert(x.length);
+    $("span#score_user").html(find_round_tips(tipping_data.round, tipping_data.tips).length);
     $("span#score_opponent").html(find_round_tips(tipping_data.round, tipping_data.tips)[1][2]);
 });
