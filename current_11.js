@@ -14,7 +14,9 @@ var tipping_data = {
 }
 
 function find_round_tips(round, a_list) {
-    return a_list.length;
+    if (a_list[0][0] === round) {
+	return 5;
+    }
 }
 
 $(function () {
