@@ -1,3 +1,15 @@
+$(function () {
+    $("span#score_user").html("lol");
+    var round = tipping_data.round;
+    var fixtures = tipping_data.fixtures;
+    var tips = tipping_data.tips;
+    var id = get_this_id();
+    var admin = tipping_data.admin;
+    var final_scores = calculate_scores(round, fixtures, tips, id, admin);
+    $("span#score_user").html("lol");
+    $("span#score_opponent").html(final_scores[1]);
+});
+
 var tipping_data = {
     round: "R1",
     admin: Administrator,
@@ -117,15 +129,3 @@ function calculate_scores(round, fixtures, tips, player, admin) {
 function get_this_id() {
     return $("div#top_info strong a").html ();
 }
-
-$(function () {
-    $("span#score_user").html("lol");
-    var round = tipping_data.round;
-    var fixtures = tipping_data.fixtures;
-    var tips = tipping_data.tips;
-    var id = get_this_id();
-    var admin = tipping_data.admin;
-    var final_scores = calculate_scores(round, fixtures, tips, id, admin);
-    $("span#score_user").html("lol");
-    $("span#score_opponent").html(final_scores[1]);
-});
