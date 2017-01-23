@@ -1,4 +1,8 @@
 $(function () {
+    $("span#score_user").html("LOLBEANSS");
+}
+
+$(function () {
     $("span#score_user").html("lol");
     var round = tipping_data.round;
     var fixtures = tipping_data.fixtures;
@@ -6,7 +10,6 @@ $(function () {
     var id = get_this_id();
     var admin = tipping_data.admin;
     var final_scores = calculate_scores(round, fixtures, tips, id, admin);
-    $("span#score_user").html("lol");
     $("span#score_opponent").html(final_scores[1]);
 });
 
