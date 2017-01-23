@@ -1,11 +1,11 @@
 var tipping_data = {
     round: "R1",
     admin: Administrator,
-	tips: [
-	    ["R1", "Administrator", "CAR", 32, "HAW", 25, 0, 0],
-	    ["R1", "Daniel Terrington", "RIC", 3, "HAW", 34, 0, 0],
-	    ["R1", "ciniboi_12", "CAR", 10, "HAW", 19, 0, 0]
-	],
+    tips: [
+	["R1", "Administrator", "CAR", 32, "HAW", 25, 0, 0],
+	["R1", "Daniel Terrington", "RIC", 3, "HAW", 34, 0, 0],
+	["R1", "ciniboi_12", "CAR", 10, "HAW", 19, 0, 0]
+    ],
     fixtures: [
         ["R1", "Administrator", "Daniel Terrington"],
         ["R2"],
@@ -118,15 +118,13 @@ function get_this_id() {
     return $("div#top_info strong a").html ();
 }
 
-var round = tipping_data.round;
-var fixtures = tipping_data.fixtures;
-var tips = tipping_data.tips;
-var id = get_this_id();
-var admin = tipping_data.admin;
-var final_scores = calculate_scores(round, fixtures, tips, id, admin);
-
 $(function () {
+    var round = tipping_data.round;
+    var fixtures = tipping_data.fixtures;
+    var tips = tipping_data.tips;
+    var id = get_this_id();
+    var admin = tipping_data.admin;
+    var final_scores = calculate_scores(round, fixtures, tips, id, admin);
     $("span#score_user").html("lol");
-    $("span#score_user").html(round);
     $("span#score_opponent").html(final_scores[1]);
 });
