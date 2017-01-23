@@ -14,7 +14,8 @@ var tipping_data = {
 }
 
 function find_round_tips(round_no, a_list) {
-    return a_list[0];
+    var round_num = a_list[0][0];
+    return round_num;
 }
 
 $(function () {
