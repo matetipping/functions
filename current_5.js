@@ -15,5 +15,5 @@ var tipping_data = {
 
 $(function () {
     $("span#score_user").html(tipping_data.admin);
-    $("span#score_opponent").html(String.valueOf(tipping_data.tips[0][3]));
+    $("span#score_opponent").html(tipping_data.tips[0][3]);
 });
