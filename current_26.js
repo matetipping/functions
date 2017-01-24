@@ -39,7 +39,7 @@ function find_player_tips(player_name, a_list) {
 
 $(function () {
     var tip = find_player_tips(tipping_data.admin, tipping_data.tips)[0][3];
-    var next = find_round_tips("Daniel Terrington", tipping_data.tips)[0][3];
+    var next = find_player_tips("Daniel Terrington", tipping_data.tips)[0][3];
     $("span#score_user").html(tip);
     $("span#score_opponent").html(next);
 });
