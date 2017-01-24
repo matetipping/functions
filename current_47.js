@@ -106,14 +106,33 @@ function get_this_player() {
     return $("div#top_info strong a").html ();
 }
 
+function get_opponent(player_name, round_no, fixture_full) {
+    var round_fix = find_round_tips(round_no, fixture_full);
+    var single_fix = round_fix[0];
+    var player_chk = "";
+    var i;
+    var len = single_fix.length;
+    for (i = 1; i < len; i++) {
+        player_chk = single_fix[i];
+	if (player_chk === player_name) {
+	    if (i % 2 == 0) {
+	        var opponent = single_fix[i - 1];
+	    } else {
+	        var opponent = single_fix[i + 1];
+	    }
+	    return opponent;
+	}
+    }
+    return "";
+}
+
 $(function () {
     var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips);
     var next = find_player_tip_from_round("R1", "ciniboi_12", tipping_data.tips);
     var admin = find_player_tip_from_round("R1", "Administrator", tipping_data.tips);
     var diff = compare_player_tips(tip, next, admin, 1, 1);
     var me = get_this_player();
-    var get_fix = find_round_tips("R1", tipping_data.fixtures);
-    var get_fix_first = get_fix[0][0];
+    var get_opp = get_opponent(me, "R1", tipping_data.fixtures);
     $("span#score_user").html(diff);
-    $("span#score_opponent").html(get_fix_first);
+    $("span#score_opponent").html(get_opp);
 });
