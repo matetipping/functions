@@ -53,9 +53,25 @@ function find_player_tip_from_round(round_no, player_name, a_list) {
     return [];
 }
 
+function compare_player_tips(player1, player2, result, game_no, scaling) {
+    var player1_team = player1[game_no*2]; var player1_marg = player1[game_no*2 + 1]; var player1_diff = 0; var player1_score = 0;
+    var player2_team = player2[game_no*2]; var player2_marg = player2[game_no*2 + 1]; var player2_diff = 0; var player2_score = 0;
+    var result_team = result[game_no*2]; var result_marg = result[game_no*2 + 1];
+
+    if (result_team === player1_team) {
+        player1_diff = Math.abs(player1_marg - result_marg);
+    } else {
+        player1_diff = player1_marg + result_marg;
+    }
+	
+    return player1_diff;
+}
+
 $(function () {
-    var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips)[4];
-    var next = find_player_tip_from_round("R1", "Administrator", tipping_data.tips)[3];
-    $("span#score_user").html(tip);
+    var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips);
+    var next = find_player_tip_from_round("R1", "ciniboi_12", tipping_data.tips);
+    var admin = find_player_tip_from_round("R1", "Administrator", tipping_data.tips);
+    var diff = compare_player_tips(tip, next, admin, 1, 1);
+    $("span#score_user").html(diff);
     $("span#score_opponent").html(next);
 });
