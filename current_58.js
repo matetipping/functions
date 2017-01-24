@@ -146,6 +146,8 @@ $(function () {
     var diff = compare_player_tips(tip, next, admin, 1, 1);
     var me = get_this_player();
     var scores = calculate_scores(me, tipping_data.admin, tipping_data.round, tipping_data.tips, tipping_data.fixtures);
-    $("span#score_user").html(scores);
-    $("span#score_opponent").html(me);
+    var score_a = scores[0];
+    var score_b = scores[1];
+    $("span#score_user").html(score_a);
+    $("span#score_opponent").html(score_b);
 });
