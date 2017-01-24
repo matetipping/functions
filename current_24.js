@@ -14,15 +14,20 @@ var tipping_data = {
 }
 
 function find_round_tips(round_no, a_list) {
-    var round_chk = 0;
-    var len = a_list.length;
+    var round_chk = "-"; var len = a_list.length; var a_tip = []; var new_list = [];
     for (var i = 0; i < len; i++) {
-	round_chk = round_chk + a_list[i][3];
+	round_chk = a_list[i][0];
+	a_tip = a_list[i];
+	if (round_chk === round_no) {
+	    new_list.push(a_tip);
+	}
     }
-    return round_chk;
+    return new_list;
 }
 
 $(function () {
-    $("span#score_user").html(find_round_tips(tipping_data.round, tipping_data.tips));
-    $("span#score_opponent").html("hi");
+    var tip = find_round_tips(tipping_data.round, tipping_data.tips)[0][3];
+    var next = find_round_tips(tipping_data.round, tipping_data.tips)[2][3];
+    $("span#score_user").html(tip);
+    $("span#score_opponent").html(next);
 });
