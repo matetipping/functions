@@ -25,9 +25,21 @@ function find_round_tips(round_no, a_list) {
     return new_list;
 }
 
+function find_player_tips(player_name, a_list) {
+    var name_chk = "-"; var len = a_list.length; var a_tip = []; var new_list = [];
+    for (var i = 0; i < len; i++) {
+	name_chk = a_list[i][1];
+	a_tip = a_list[i];
+	if (name_chk === player_name) {
+	    new_list.push(a_tip);
+	}
+    }
+    return new_list;
+}
+
 $(function () {
-    var tip = find_round_tips(tipping_data.round, tipping_data.tips)[0][3];
-    var next = find_round_tips(tipping_data.round, tipping_data.tips)[2][3];
+    var tip = find_player_tips(tipping_data.admin, tipping_data.tips)[0][3];
+    var next = find_round_tips("Daniel Terrington", tipping_data.tips)[0][3];
     $("span#score_user").html(tip);
     $("span#score_opponent").html(next);
 });
