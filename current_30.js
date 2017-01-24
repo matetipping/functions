@@ -41,18 +41,21 @@ function find_player_tips(player_name, a_list) {
 
 // returns array of player's tips from given round OR empty array if no tips found.
 function find_player_tip_from_round(round_no, player_name, a_list) {
-    var player_tips = find_player_tips(player_name, a_list);
-    var round_tips = find_round_tips(round_no, player_tips);
-    var result = [];
-    if (round_tips.length > 0) {
-	result = round_tips[0]
+    var round_chk = "-"; var name_chk = "-"; var len = a_list.length; var a_tip = [];
+    for (var i = 0; i < len; i++) {
+	round_chk = a_list[i][0];
+	name_chk = a_list[i][1];
+	a_tip = a_list[i];
+	if (name_chk === player_name && round_chk === round_no) {
+	    return a_tip;
+	}
     }
-    return result;
+    return [];
 }
 
 $(function () {
     var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips)[4];
-    var next = find_player_tip_from_round("R1", "Administrator", tipping_data.tips[3];
+    var next = find_player_tip_from_round("R1", "Administrator", tipping_data.tips)[3];
     $("span#score_user").html(tip);
     $("span#score_opponent").html(next);
 });
