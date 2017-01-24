@@ -106,20 +106,14 @@ function get_this_player() {
     return $("div#top_info strong a").html ();
 }
 
-// returns a player's opponent
-function get_opponent(player_name, round_no, fixtures) {
-    var round_fix = get_round_tips(round_no, fixtures);
-    var round_fix_first = round_fix[0][0];
-    return round_fix_first;
-}
-
 $(function () {
     var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips);
     var next = find_player_tip_from_round("R1", "ciniboi_12", tipping_data.tips);
     var admin = find_player_tip_from_round("R1", "Administrator", tipping_data.tips);
     var diff = compare_player_tips(tip, next, admin, 1, 1);
     var me = get_this_player();
-    var id = get_opponent(me, "R1", tipping_data.fixtures);
+    var get_fix = find_round_tips("R1", tipping_data.fixtures);
+    var get_fix_first = get_fix[0][0];
     $("span#score_user").html(diff);
-    $("span#score_opponent").html(id);
+    $("span#score_opponent").html(get_fix_first);
 });
