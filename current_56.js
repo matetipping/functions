@@ -134,16 +134,6 @@ function calculate_scores(player_name, results_name, round_no, tips_full, fixtur
     var results = find_player_tip_from_round(round_no, results_name, tips_full);
     var round_length = (player_tips.length - 4)/2;
     return round_length;
-    var player_total = player_tips[player_tips.length - 2] + player_tips[player_tips.length - 1];
-    var opponent_total = opponent_tips[opponent_tips.length - 2] + opponent_tips[opponent_tips.length - 1];
-    var tip_scores = [];
-    var i;
-    for (i = 1; i <= round_length; i++) {
-        tip_scores = compare_player_tips(player_tips, opponent_tips, results, i, 1);
-        player_total = player_total + tip_scores[0];
-        opponent_total = opponent_total + tip_scores[1];
-    }
-    tip_scores = [player_total, opponent_total];
 }
 
 $(function () {
