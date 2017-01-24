@@ -111,6 +111,7 @@ function calculate_scores(round, fixtures, tips, player, admin) {
     var player_total = player_tips[player_tips.length - 2] + player_tips[player_tips.length - 1];
     var opponent_total = opponent_tips[opponent_tips.length - 2] + opponent_tips[opponent_tips.length - 1];
     var tip_scores = [0,0];
+    var i;
     for (i = 1; i <= round_length; i++) {
         tip_scores = compare_tips(results, player_tips, opponent_tips, i, 1);
         player_total = player_total + tip_scores[0];
