@@ -97,8 +97,8 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
     // scales player scores
     player1_score = Math.floor(player1_score * scaling + 0.5);
     player2_score = Math.floor(player2_score * scaling + 0.5);
-	
-    return player2_score;
+    var scores = [player1_score, player2_score];
+    return scores;
 }
 
 // returns the player's name
