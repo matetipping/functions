@@ -108,8 +108,9 @@ function get_this_player() {
 
 // returns a player's opponent
 function get_opponent(player_name, round_no, fixtures) {
-    var round_fix = get_round_tips(round_no, fixtures)[0];
-    return round_fix[0];
+    var round_fix = get_round_tips(round_no, fixtures);
+    var round_fix_first = round_fix[0][0];
+    return round_fix_first;
 }
 
 $(function () {
