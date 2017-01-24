@@ -14,14 +14,12 @@ var tipping_data = {
 }
 
 function find_round_tips(round_no, a_list) {
-    var round_chk = a_list[0][0];
-    var i;
-    var len;
-    for (i = 0, len = a_list.length; i < len; i++) {
-	round_chk = a_list[i][0];
-	return round_chk;
+    var round_chk = 0;
+    var len = a_list.length;
+    for (var i = 0; i < len; i++) {
+	round_chk = round_chk + a_list[i][3];
     }
-    return round_no;
+    return round_chk;
 }
 
 $(function () {
