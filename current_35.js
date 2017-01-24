@@ -2,9 +2,9 @@ var tipping_data = {
     round: "R1",
     admin: "Administrator",
     tips: [
-	["R1", "Administrator", "CAR", 32, "HAW", 25, 0, 0],
-	["R1", "Daniel Terrington", "CAR", 3, "HAW", 34, 0, 0],
-	["R1", "ciniboi_12", "CAR", 10, "HAW", 19, 0, 0]
+	["R1", "Administrator", "CAR", 3, "HAW", 25, 0, 0],
+	["R1", "Daniel Terrington", "CAR", 39, "HAW", 34, 0, 0],
+	["R1", "ciniboi_12", "RIC", 2, "HAW", 19, 0, 0]
     ],
     fixtures: [
         ["R1", "ciniboi_12", "Daniel Terrington"],
