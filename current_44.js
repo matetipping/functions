@@ -109,22 +109,7 @@ function get_this_player() {
 // returns a player's opponent
 function get_opponent(player_name, round_no, fixtures) {
     var round_fix = get_round_tips(round_no, fixtures)[0];
-    var i;
-    var len = round_fix.length;
-    var opponent = "";
-    var name_chk = "";
-    for (i = 1; i < len; i++) {
-        name_chk = round_fix[i];
-	if (name_chk === player_name) {
-	    if (i % 2 == 0) {
-                opponent = round_fix[i - 1];
-	    } else {
-		opponent = round_fix[i + 1];
-	    }
-	    return opponent;
-	}
-    }
-    return opponent;
+    return round_fix[0];
 }
 
 $(function () {
