@@ -94,7 +94,7 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
         }
     }
 
-    return player1_score;
+    return player2_score;
 }
 
 $(function () {
