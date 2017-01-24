@@ -53,18 +53,48 @@ function find_player_tip_from_round(round_no, player_name, a_list) {
     return [];
 }
 
+// returns 
 function compare_player_tips(player1, player2, result, game_no, scaling) {
     var player1_team = player1[game_no*2]; var player1_marg = player1[game_no*2 + 1]; var player1_diff = 0; var player1_score = 0;
     var player2_team = player2[game_no*2]; var player2_marg = player2[game_no*2 + 1]; var player2_diff = 0; var player2_score = 0;
     var result_team = result[game_no*2]; var result_marg = result[game_no*2 + 1];
 
+    // gets player 1's difference
     if (result_team === player1_team) {
         player1_diff = Math.abs(player1_marg - result_marg);
     } else {
         player1_diff = player1_marg + result_marg;
     }
-	
-    return player1_diff;
+
+    // gets player 2's difference
+    if (result_team === player2_team) {
+        player2_diff = Math.abs(player2_marg - result_marg);
+    } else {
+        player2_diff = player2_marg + result_marg;
+    }
+
+    // calculates scores without extra scaling
+    if (player1_diff > player2_diff) {
+        player2_score = player1_diff - player2_diff;
+        player1_score = 0;
+        if ((player1_team === result_team) && (player2_team !== result_team)) {
+            player2_score = player2_score / 2;
+        }
+        if (player2_diff === 0) {
+            player2_score = player2_score * 2;
+        }
+    } else {
+        player1_score = player2_diff - player1_diff;
+        player2_score = 0;
+        if ((player2_team === result_team) && (player1_team !== result_team)) {
+            player1_score = player1_score / 2;
+        }
+        if (player1_diff === 0) {
+            player1_score = player1_score * 2;
+        }
+    }
+
+    return player1_score;
 }
 
 $(function () {
