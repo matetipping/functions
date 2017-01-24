@@ -135,6 +135,13 @@ function calculate_scores(player_name, results_name, round_no, tips_full, fixtur
     var round_length = (player_tips.length - 4)/2;
     var player_total = player_tips[player_tips.length - 2] + player_tips[player_tips.length - 1];
     var opponent_total = opponent_tips[opponent_tips.length - 2] + opponent_tips[opponent_tips.length - 1];
+    var comparison = [];
+    var i;
+    for (i = 1; i <= round_length; i++) {
+        comparison = compare_player_tips(player_tips, opponent_tips, results, i, 1);
+        player_total = player_total + comparison[0];
+        opponent_total = opponent_total + comparison[1];
+    }
     var tip_scores = [player_total, opponent_total];
     return tip_scores;
 }
