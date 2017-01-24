@@ -95,8 +95,8 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
     }
 
     // scales player scores
-    player1_score = Math.ceil(player1_score * scaling - 0.49);
-    player2_score = Math.ceil(player2_score * scaling - 0.49);
+    player1_score = Math.floor(player1_score * scaling + 0.5);
+    player2_score = Math.floor(player2_score * scaling + 0.5);
 	
     return player2_score;
 }
