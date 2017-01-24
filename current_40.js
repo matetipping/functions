@@ -107,7 +107,7 @@ $(function () {
     var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips);
     var next = find_player_tip_from_round("R1", "ciniboi_12", tipping_data.tips);
     var admin = find_player_tip_from_round("R1", "Administrator", tipping_data.tips);
-    var diff = compare_player_tips(tip, next, admin, 1, 1);
+    var diff = compare_player_tips(tip, next, admin, 1, 0.5);
     $("span#score_user").html(diff);
     $("span#score_opponent").html(next);
 });
