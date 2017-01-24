@@ -146,15 +146,15 @@ function calculate_scores(player_name, results_name, round_no, tips_full, fixtur
     return tip_scores;
 }
 
+function set_scores(player_name) {
+    var scores = calculate_scores(player_name, tipping_data.admin, tipping_data.round, tipping_data.tips, tipping_data.fixtures);
+    var score_player = scores[0];
+    var score_opponent = scores[1];
+    $("span#score_user").html(score_player);
+    $("span#score_opponent").html(score_opponent);
+}
+
 $(function () {
-    var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips);
-    var next = find_player_tip_from_round("R1", "ciniboi_12", tipping_data.tips);
-    var admin = find_player_tip_from_round("R1", "Administrator", tipping_data.tips);
-    var diff = compare_player_tips(tip, next, admin, 1, 1);
     var me = get_this_player();
-    var scores = calculate_scores(me, tipping_data.admin, tipping_data.round, tipping_data.tips, tipping_data.fixtures);
-    var score_a = scores[0];
-    var score_b = scores[1];
-    $("span#score_user").html(score_a);
-    $("span#score_opponent").html(score_b);
+    set_scores(me);
 });
