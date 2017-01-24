@@ -128,7 +128,7 @@ function get_opponent(player_name, round_no, fixture_full) {
 }
 
 function calculate_scores(player_name, results_name, round_no, tips_full, fixtures_full) {
-    var opponent = find_opponent(round_no, player_name, fixtures_full);
+    var opponent = get_opponent(player_name, round_no, fixtures_full);
     var player_tips = find_player_tip_from_round(round_no, player_name, tips_full);
     var opponent_tips = find_player_tip_from_round(round_no, opponent, tips_full);
     var results = find_player_tip_from_round(round_no, results_name, tips_full);
