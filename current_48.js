@@ -106,6 +106,7 @@ function get_this_player() {
     return $("div#top_info strong a").html ();
 }
 
+// returns the name of a given player's opponent in a round
 function get_opponent(player_name, round_no, fixture_full) {
     var round_fix = find_round_tips(round_no, fixture_full);
     var single_fix = round_fix[0];
@@ -126,13 +127,34 @@ function get_opponent(player_name, round_no, fixture_full) {
     return "";
 }
 
+function calculate_scores(player_name, results_name, round_no, tips_full, fixtures_full) {
+    var round_length = (player_tips.length - 4)/2;
+    var opponent = find_opponent(round_no, player_name, fixtures_full);
+    var player_tips = find_player_tip_from_round(round_no, player_name, tips_full);
+    var opponent_tips = find_player_tip_from_round(round_no, opponent, tips_full);
+    var results = find_player_tips_from_round(round_no, results_name, tips_full)[0];
+    var player_total = player_tips[player_tips.length - 2] + player_tips[player_tips.length - 1];
+    var opponent_total = opponent_tips[opponent_tips.length - 2] + opponent_tips[opponent_tips.length - 1];
+    var tip_scores = [];
+    var i;
+    for (i = 1; i <= round_length; i++) {
+        tip_scores = compare_tips(player_tips, opponent_tips, results, i, 1);
+        player_total = player_total + tip_scores[0];
+        opponent_total = opponent_total + tip_scores[1];
+    }
+    tip_scores = [player_total, opponent_total];
+    return tip_scores;
+}
+
 $(function () {
     var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips);
     var next = find_player_tip_from_round("R1", "ciniboi_12", tipping_data.tips);
     var admin = find_player_tip_from_round("R1", "Administrator", tipping_data.tips);
     var diff = compare_player_tips(tip, next, admin, 1, 1);
     var me = get_this_player();
-    var get_opp = get_opponent(me, "R1", tipping_data.fixtures);
-    $("span#score_user").html(diff);
-    $("span#score_opponent").html(get_opp);
+    var scores = calculate_scores(me, tipping_data.admin, tipping_data.round, tipping_data.tips, tipping_data.fixtures);
+    var score_a = scores[0];
+    var score_b = scores[1];
+    $("span#score_user").html(score_a);
+    $("span#score_opponent").html(score_b);
 });
