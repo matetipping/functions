@@ -3,7 +3,7 @@ var tipping_data = {
     admin: "Administrator",
     tips: [
 	["R1", "Administrator", "CAR", 2, "HAW", 25, 0, 0],
-	["R1", "Daniel Terrington", "CAR", 38, "HAW", 34, 0, 0],
+	["R1", "Daniel Terrington", "CAR", 36, "HAW", 34, 0, 0],
 	["R1", "ciniboi_12", "RIC", 3, "HAW", 19, 0, 0]
     ],
     fixtures: [
@@ -101,13 +101,17 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
     return player2_score;
 }
 
-
+// returns the player's name
+function get_this_player() {
+    return $("div#top_info strong a").html ();
+}
 
 $(function () {
     var tip = find_player_tip_from_round("R1", "Daniel Terrington", tipping_data.tips);
     var next = find_player_tip_from_round("R1", "ciniboi_12", tipping_data.tips);
     var admin = find_player_tip_from_round("R1", "Administrator", tipping_data.tips);
-    var diff = compare_player_tips(tip, next, admin, 1, 0.5);
+    var diff = compare_player_tips(tip, next, admin, 1, 1);
+    var id = get_this_player();
     $("span#score_user").html(diff);
-    $("span#score_opponent").html(next);
+    $("span#score_opponent").html(id);
 });
