@@ -132,9 +132,28 @@ function calculate_scores(player_name, results_name, round_no, tips_full, fixtur
     var player_tips = find_player_tip_from_round(round_no, player_name, tips_full);
     var opponent_tips = find_player_tip_from_round(round_no, opponent, tips_full);
     var results = find_player_tip_from_round(round_no, results_name, tips_full);
-    var round_length = (results.length - 2)/2;
-    var player_total = player_tips[player_tips.length - 2] + player_tips[player_tips.length - 1];
-    var opponent_total = opponent_tips[opponent_tips.length - 2] + opponent_tips[opponent_tips.length - 1];
+    var round_length = (results.length - 4)/2;
+    
+    // checks if player tipped bonus tips and adds to score.
+    if (typeof player_tips[player_tips.length - 2] === "number") {
+        var player_total = player_tips[player_tips.length - 2];
+    } else {
+        var player_total = 0;
+    }
+    if (typeof player_tips[player_tips.length - 1] === "number") {
+        player_total = player_total + player_tips[player_tips.length - 1];
+    }
+
+    // checks if opponent tipped bonus tips and adds to score.
+    if (typeof opponent_tips[opponent_tips.length - 2] === "number") {
+        var opponent_total = opponent_tips[opponent_tips.length - 2];
+    } else {
+        var opponent_total = 0;
+    }
+    if (typeof opponent_tips[opponent_tips.length - 1] === "number") {
+        opponent_total = opponent_total + opponent_tips[opponent_tips.length - 1];
+    }
+    
     var comparison = [];
     var i;
     for (i = 1; i <= round_length; i++) {
