@@ -212,8 +212,6 @@ function change_match(direction) {
 	    }
 	    set_scores(new_user, new_opp);
 	    set_names(new_user, new_opp);
-	    set_emblem("emblem_user", new_user, emblem_data.emblems);
-	    set_emblem("emblem_opponent", new_opp, emblem_data.emblems);
         }
     }
 }
