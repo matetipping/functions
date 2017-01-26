@@ -2,7 +2,7 @@ var tipping_data = {
     round: "R1",
     admin: "Administrator",
     tips: [
-	["R1", "Administrator", "CAR", 2, "", ""],
+	["R1", "Administrator", "CAR", 2, "HAW", 50, "", ""],
 	["R1", "Daniel Terrington", "CAR", 36, "HAW", 34, "", 23],
 	["R1", "ciniboi_12", "RIC", 3, "HAW", 19, "DNT", 5]
     ],
@@ -201,6 +201,8 @@ function change_games(direction, player_name, round_no, fixture_full) {
 	    }
 	    set_names(new_player, new_opp);
 	    set_scores(new_player, new_opp);
+	    set_emblem("_user", new_player, emblem_data.emblems);
+	    set_emblem("_opponent", new_opp, emblem_data.emblems);
 	    return;
 	}
     }
