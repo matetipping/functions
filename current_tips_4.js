@@ -182,4 +182,5 @@ function set_names(player_name) {
 $(function () {
     var me = get_this_player();
     set_scores(me);
+    set_names(me);
 });
