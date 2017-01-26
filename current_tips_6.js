@@ -176,7 +176,7 @@ function set_scores(player_name) {
 function set_names(player_name) {
     var opponent_name = get_opponent(player_name, tipping_data.round, tipping_data.fixtures);
     $("span#name_user").html(player_name);
-    $("span#name_opponent".html(opponent_name);
+    $("span#name_opponent").html(opponent_name);
 }
 
 $(function () {
