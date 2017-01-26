@@ -127,8 +127,7 @@ function get_opponent(player_name, round_no, fixture_full) {
     return "";
 }
 
-function calculate_scores(player_name, results_name, round_no, tips_full, fixtures_full) {
-    var opponent = get_opponent(player_name, round_no, fixtures_full);
+function calculate_scores(player_name, opponent, results_name, round_no, tips_full)
     var player_tips = find_player_tip_from_round(round_no, player_name, tips_full);
     var opponent_tips = find_player_tip_from_round(round_no, opponent, tips_full);
     var results = find_player_tip_from_round(round_no, results_name, tips_full);
@@ -165,22 +164,22 @@ function calculate_scores(player_name, results_name, round_no, tips_full, fixtur
     return tip_scores;
 }
 
-function set_scores(player_name) {
-    var scores = calculate_scores(player_name, tipping_data.admin, tipping_data.round, tipping_data.tips, tipping_data.fixtures);
+function set_scores(player_name, opponent_name) {
+    var scores = calculate_scores(player_name, opponent_name, tipping_data.admin, tipping_data.round, tipping_data.tips);
     var score_player = scores[0];
     var score_opponent = scores[1];
     $("span#score_user").html(score_player);
     $("span#score_opponent").html(score_opponent);
 }
 
-function set_names(player_name) {
-    var opponent_name = get_opponent(player_name, tipping_data.round, tipping_data.fixtures);
+function set_names(player_name, opponent_name) {
     $("span#name_user").html(player_name);
     $("span#name_opponent").html(opponent_name);
 }
 
 $(function () {
     var me = get_this_player();
-    set_scores(me);
-    set_names(me);
+    var them = get_opponent(me, tipping_data.round, tipping_data.fixtures);
+    set_scores(me, them);
+    set_names(me, them);
 });
