@@ -177,7 +177,8 @@ function set_names(player_name, opponent_name) {
     $("span#name_opponent").html(opponent_name);
 }
 
-function change_match(direction) {
+$("button.change_game").click(function() {
+    var direction = $(this).html();
     var current_player = $("span#name_user").html();
     var me = get_this_player();
     var i;
@@ -212,6 +213,7 @@ function change_match(direction) {
 	    }
 	    set_scores(new_user, new_opp);
 	    set_names(new_user, new_opp);
+	    return;
         }
     }
 }
