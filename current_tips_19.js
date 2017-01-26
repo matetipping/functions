@@ -177,47 +177,6 @@ function set_names(player_name, opponent_name) {
     $("span#name_opponent").html(opponent_name);
 }
 
-$("button.change_game").click(function() {
-    var direction = $(this).html();
-    var current_player = $("span#name_user").html();
-    var me = get_this_player();
-    var i;
-    var len = tipping_data.fixtures.length;
-    for (i = 1; i < len; i++) {
-        if (tipping_data.fixtures[i] === current_player) {
-	    if (i%2 == 0) {
-	        i--;
-	    }
-	    if (direction === "next") {
-	        if (i+2 == len) {
-	            var new_user = tipping_data.fixtures[1];
-		    var new_opp = tipping_data.fixtures[2];
-	        } else {
-		    var new_user = tipping_data.fixtures[i+2];
-		    var new_opp = tipping_data.fixtures[i+3];
-	        }
-            }
-	    if (direction === "prev") {
-	        if (i == 1) {
-	            var new_user = tipping_data.fixtures[len-2];
-		    var new_opp = tipping_data.fixtures[len-1];
-	        } else {
-		    var new_user = tipping_data.fixtures[i-2];
-		    var new_opp = tipping_data.fixtures[i-1];
-	        }
-	    }
-	    if (new_opp === me) {
-	        var temp = new_user;
-		new_user = me;
-		new_opp = temp;
-	    }
-	    set_scores(new_user, new_opp);
-	    set_names(new_user, new_opp);
-	    return;
-        }
-    }
-}
-
 $(function () {
     var me = get_this_player();
     var them = get_opponent(me, tipping_data.round, tipping_data.fixtures);
