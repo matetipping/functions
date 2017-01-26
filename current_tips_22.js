@@ -206,6 +206,13 @@ function change_games(direction, player_name, round_no, fixture_full) {
     }
 }
 
+function change_scores(direction) {
+    var player_name = $("span#name_user").html();
+    var round_no = tipping_data.round;
+    var fixture_full = tipping_data.fixtures;
+    change_games(direction, player_name, round_no, fixture_full);
+}
+
 function set_scores(player_name, opponent_name) {
     var scores = calculate_scores(player_name, opponent_name, tipping_data.admin, tipping_data.round, tipping_data.tips);
     var score_player = scores[0];
