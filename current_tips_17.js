@@ -188,7 +188,7 @@ $("button.change_game").click(function() {
 	    if (i%2 == 0) {
 	        i--;
 	    }
-	    if (direction === "forward") {
+	    if (direction === "next") {
 	        if (i+2 == len) {
 	            var new_user = tipping_data.fixtures[1];
 		    var new_opp = tipping_data.fixtures[2];
@@ -197,7 +197,7 @@ $("button.change_game").click(function() {
 		    var new_opp = tipping_data.fixtures[i+3];
 	        }
             }
-	    if (direction === "backward") {
+	    if (direction === "prev") {
 	        if (i == 1) {
 	            var new_user = tipping_data.fixtures[len-2];
 		    var new_opp = tipping_data.fixtures[len-1];
