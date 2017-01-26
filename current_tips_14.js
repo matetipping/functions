@@ -7,7 +7,7 @@ var tipping_data = {
 	["R1", "ciniboi_12", "RIC", 3, "HAW", 19, "DNT", 5]
     ],
     fixtures: [
-        ["R1", "ciniboi_12", "Daniel Terrington", "Administrator", "Daniel Terrington"],
+        ["R1", "ciniboi_12", "Daniel Terrington", "Administrator", "Daniel Terrington", "ciniboi_12", "Daniel Terrington"],
         ["R2"],
         ["R3"]
     ]
