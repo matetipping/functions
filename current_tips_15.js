@@ -183,7 +183,7 @@ function change_match(direction) {
     var i;
     var len = tipping_data.fixtures.length;
     for (i = 1; i < len; i++) {
-        if (tipping_data.fixtures.length[i] === current_player) {
+        if (tipping_data.fixtures[i] === current_player) {
 	    if (i%2 == 0) {
 	        i--;
 	    }
