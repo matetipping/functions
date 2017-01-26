@@ -204,8 +204,8 @@ function change_games(direction, player_name, round_no, fixture_full) {
 	    }
 	    set_names(new_player, new_opp);
 	    set_scores(new_player, new_opp);
-	    set_emblem("_user", new_player, emblem_data.emblems);
-	    set_emblem("_opponent", new_opp, emblem_data.emblems);
+	    set_emblem("emblem_user", new_player, emblem_data.emblems);
+	    set_emblem("emblem_opponent", new_opp, emblem_data.emblems);
 	    return;
 	}
     }
