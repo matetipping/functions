@@ -164,7 +164,7 @@ function calculate_scores(player_name, opponent, results_name, round_no, tips_fu
     return tip_scores;
 }
 
-function change_players(direction, player_name, round_no, fixture_full) {
+function change_games(direction, player_name, round_no, fixture_full) {
     var me = get_this_player();
     var i;
     var fixture = find_round_tips(round_no, fixture_full);
@@ -204,10 +204,6 @@ function change_players(direction, player_name, round_no, fixture_full) {
 	    return;
 	}
     }
-}
-
-function get_next_players(player_name, round_no) {
-    
 }
 
 function set_scores(player_name, opponent_name) {
