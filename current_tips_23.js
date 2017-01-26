@@ -169,7 +169,7 @@ function change_games(direction, player_name, round_no, fixture_full) {
     var i;
     var fixture = find_round_tips(round_no, fixture_full);
     var round_fix = fixture[0];
-    var len = fixture.length;
+    var len = round_fix.length;
     var player_chk = "";
     for (i = 1; i < len; i++) {
         player_chk = round_fix[i];
