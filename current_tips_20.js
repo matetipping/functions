@@ -164,6 +164,52 @@ function calculate_scores(player_name, opponent, results_name, round_no, tips_fu
     return tip_scores;
 }
 
+function change_players(direction, player_name, round_no, fixture_full) {
+    var me = get_this_player();
+    var i;
+    var fixture = find_round_tips(round_no, fixture_full);
+    var round_fix = fixture[0];
+    var len = fixture.length;
+    var player_chk = "";
+    for (i = 1; i < len; i++) {
+        player_chk = round_fix[i];
+        if (player_chk === player_name) {
+	    if (i % 2 == 0) {
+	        i--;
+	    }
+	    if (direction === "backward") {
+	        if (i == 1) {
+		    var new_player = round_fix[len - 2];
+		    var new_opp = round_fix[len - 1];
+		} else {
+		    var new_player = round_fix[i - 2];
+		    var new_opp = round_fix[i - 1];
+		}
+	    } else {
+	        if (i+2 == len) {
+		    var new_player = round_fix[1];
+		    var new_opp = round_fix[2];
+		} else {
+		    var new_player = round_fix[i + 2];
+		    var new_opp = round_fix[i + 3];
+		}
+	    }
+	    if (new_opp === me) {
+	        var temp = new_opp;
+		new_opp = new_player;
+		new_player = me;
+	    }
+	    set_names(new_player, new_opp);
+	    set_scores(new_player, new_opp);
+	    return;
+	}
+    }
+}
+
+function get_next_players(player_name, round_no) {
+    
+}
+
 function set_scores(player_name, opponent_name) {
     var scores = calculate_scores(player_name, opponent_name, tipping_data.admin, tipping_data.round, tipping_data.tips);
     var score_player = scores[0];
