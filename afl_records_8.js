@@ -25,7 +25,8 @@ function set_match(i, match_dets) {
     var team_a = match_dets[1];
     var team_b = match_dets[2];
     var venue = match_dets[3];
-    $("tipping_matchname_" + i).html(team_a + " vs " + team_b);
+    var num = i.toString();
+    $("tipping_matchname_" + num).html(team_a + " vs " + team_b);
 }
 
 function set_all_matches(round_no) {
