@@ -90,7 +90,7 @@ function to_longname(shortname) {
             longname = "West Coast Eagles";
             break;
         default:
-            longname = "Western Bulldogs;
+            longname = "Western Bulldogs";
     }
     return longname;
 }
