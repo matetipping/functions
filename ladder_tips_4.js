@@ -21,3 +21,19 @@ function remove_team(value) {
          }
     }
 }
+
+function show_submit() {
+    var i;
+    var noComplete = 0;
+    for (i = 0; i < 18; i++) {
+        var position_val = $("select#ladder_team_" + i).val();
+        if (position_val !== "") {
+            noComplete++;
+        }
+    }
+    if (noComplete == 18) {
+        $("button#btn_ladderform").attr("display", "inline-block");
+    } else {
+        $("button#btn_ladderform").attr("display", "none");
+    }
+}
