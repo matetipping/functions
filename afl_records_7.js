@@ -56,5 +56,5 @@ function set_all_matches(round_no) {
         
 $(function () {
    set_all_matches(tipping_data.round);
-   set_match(1, afl_data.fixtures[0]);
+   set_match(1, afl_data.fixtures[1]);
 });
