@@ -52,3 +52,6 @@ function set_all_matches(round_no) {
     $("h2#tipping_roundtitle").html(round_title);
 }
         
+$(function () {
+   set_all_matches("R2"); 
+});
