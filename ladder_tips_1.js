@@ -6,12 +6,12 @@ var ladder_data = {
 }
 
 function set_image(id, value) {
-    low_val = value.toLowerCase();
-    $("span#ladderimg_" + id + " div.team_block").attr("id", low_value);
+    var low_val = value.toLowerCase();
+    $("span#ladderimg_" + id + " div.team_block").attr("id", low_val);
 }
 
 function remove_team(value) {
-    low_val = value.toLowerCase();
+    var low_val = value.toLowerCase();
     var i;
     for (i = 0; i < 18; i++) {
          var img_id = $("span#ladderimg_" + i + " div.team_block").attr("id");
