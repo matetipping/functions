@@ -25,5 +25,5 @@ function set_all_matches(round_no) {
 }
         
 $(function () {
-   set_all_matches("R2"); 
+   set_all_matches("R5"); 
 });
