@@ -17,7 +17,7 @@ function remove_team(value) {
          var img_id = $("span#ladderimg_" + i + " div.team_block").attr("id");
          if (img_id === low_val) {
              $("span#ladderimg_" + i + " div.team_block").removeAttr("id");
-             $("select#ladder_team_" + i).value("");
+             $("select#ladder_team_" + i).val("");
          }
     }
 }
