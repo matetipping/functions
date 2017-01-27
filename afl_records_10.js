@@ -24,8 +24,75 @@ var afl_data = {
 function set_match(i, match_dets) {
     var team_a = match_dets[1];
     var team_b = match_dets[2];
+    var long_a = to_longname(team_a);
+    var long_b = to_longname(team_b);
     var venue = match_dets[3];
-    $("h3#tipping_matchname_" + i).html(team_a + " vs " + team_b);
+    $("h3#tipping_matchname_" + i).html(team_a + " v " + team_b);
+    $("h3#tipping_venue_" + i).html(venue);
+    $("option#tipping_teama_" + i).html(long_a);
+    $("option#tipping_teamb_" + i).html(long_b);
+    $("option#tipping_teama_" + i).val(team_a);
+    $("option#tipping_teamb_" + i).val(team_b);
+}
+
+function to_longname(shortname) {
+    var longname = "";
+    switch(shortname) {
+        case "ADE":
+            longname = "Adelaide Crows";
+            break;
+        case "BRI":
+            longname = "Brisbane Lions";
+            break;
+        case "CAR":
+            longname = "Carlton Blues";
+            break;
+        case "COL":
+            longname = "Collingwood Magpies";
+            break;
+        case "ESS":
+            longname = "Essendon Bombers";
+            break;
+        case "FRE":
+            longname = "Fremantle Dockers";
+            break;
+        case "GEE":
+            longname = "Geelong Cats";
+            break;
+        case "GCS":
+            longname = "Gold Coast Suns";
+            break;
+        case "GWS":
+            longname = "GWS Giants";
+            break;
+        case "HAW":
+            longname = "Hawthorn Hawks";
+            break;
+        case "MEL":
+            longname = "Melbourne Demons";
+            break;
+        case "NTH":
+            longname = "North Melbourne";
+            break;
+        case "PTA":
+            longname = "Port Adelaide Power";
+            break;
+        case "RIC":
+            longname = "Richmond Tigers";
+            break;
+        case "STK":
+            longname = "St Kilda Saints";
+            break;
+        case "SYD":
+            longname = "Sydney Swans";
+            break;
+        case "WCE":
+            longname = "West Coast Eagles";
+            break;
+        default:
+            longname = "Western Bulldogs;
+    }
+    return longname;
 }
 
 function set_all_matches(round_no) {
