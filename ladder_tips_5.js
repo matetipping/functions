@@ -32,8 +32,8 @@ function show_submit() {
         }
     }
     if (noComplete == 18) {
-        $("button#btn_ladderform").attr("display", "inline-block");
+        document.getElementById("btn_ladderform").style.display = "inline-block";
     } else {
-        $("button#btn_ladderform").attr("display", "none");
+        document.getElementById("btn_ladderform").style.display = "none";
     }
 }
