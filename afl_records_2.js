@@ -33,11 +33,11 @@ function set_all_matches(round_no) {
     if (is_r == 0) {
         round_title = "Round ";
         var round_number = round_no.substring(1);
-        var round_title = round_title + round_number;
+        var round_title = round_title.concat(round_number);
     } else if (is_b == 0) {
         round_title = "Bye Round ";
         var round_number = round_no.substring(1);
-        var round_title = round_title + round_number;
+        var round_title = round_title.concat(round_number);
     } else if (round_no === "F1") {
         round_title = "Qualifying/Elimination Final";
     } else if (round_no === "F2") {
@@ -47,7 +47,7 @@ function set_all_matches(round_no) {
     } else {
         round_title = "Grand Final";
     }
-    round_title = round_title + " Tipping";
+    round_title = round_title.concat(" Tipping");
     
     $("h2#tipping_roundtitle").html(round_title);
 }
