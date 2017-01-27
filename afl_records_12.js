@@ -24,6 +24,8 @@ var afl_data = {
 function set_match(i, match_dets) {
     var team_a = match_dets[1];
     var team_b = match_dets[2];
+    var low_a = team_a.toLowerCase();
+    var low_b = team_b.toLowerCase();
     var long_a = to_longname(team_a);
     var long_b = to_longname(team_b);
     var venue = match_dets[3];
@@ -33,6 +35,8 @@ function set_match(i, match_dets) {
     $("option#tipping_teamb_" + i).html(long_b);
     $("option#tipping_teama_" + i).val(team_a);
     $("option#tipping_teamb_" + i).val(team_b);
+    $("span#tipping_imagea_" + i + " div.team_block").attr("id", low_a);
+    $("span#tipping_imageb_" + i + " div.team_block").attr("id", low_b);
 }
 
 function to_longname(shortname) {
