@@ -123,6 +123,8 @@ function set_all_matches(round_no) {
     round_title = round_title.concat(" Tipping");
     
     $("h2#tipping_roundtitle").html(round_title);
+    $("input#tipping_roundname").val(round_title);
+    $("input#tipping_roundnum").val(round_no);
     
     var fixtures = find_round_tips(round_no, afl_data.fixtures);
     var i;
