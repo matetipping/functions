@@ -123,9 +123,15 @@ function set_all_matches(round_no) {
     round_title = round_title.concat(" Tipping");
     
     $("h2#tipping_roundtitle").html(round_title);
+    
+    var fixtures = find_round_tips(round_no, afl_data.fixtures);
+    var i;
+    var len = fixtures.length;
+    for (i = 0; i < len; i++) {
+        set_match(i, fixtures[i]);
+    }
 }
         
 $(function () {
    set_all_matches(tipping_data.round);
-   set_match(1, afl_data.fixtures[1]);
 });
