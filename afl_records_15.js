@@ -135,5 +135,5 @@ function set_all_matches(round_no) {
 }
         
 $(function () {
-   set_all_matches(tipping_data.round);
+   $("select#tipping_roundselector").val(tipping_data.round);
 });
