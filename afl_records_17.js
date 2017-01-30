@@ -17,7 +17,25 @@ var afl_data = {
         ["R2", "WCE", "STK", "DS - Saturday, April 1 - 4:40 PM"],
         ["R2", "GEE", "NTH", "ES - Sunday, April 2 - 1:10 PM"],
         ["R2", "MEL", "CAR", "MCG - Sunday, April 2 - 3:20 PM"],
-        ["R2", "PTA", "FRE", "AO - Sunday, April 2 - 4:10 PM"]
+        ["R2", "PTA", "FRE", "AO - Sunday, April 2 - 4:10 PM"],
+        ["R3", "SYD", "COL", "SCG - Friday, April 7 - 7:50 PM"],
+        ["R3", "NTH", "GWS", "BA - Saturday, April 8 - 1:45 PM"],
+        ["R3", "RIC", "WCE", "MCG - Saturday, April 8 - 2:10 PM"],
+        ["R3", "GEE", "MEL", "ES - Saturday, April 8 - 4:35 PM"],
+        ["R3", "PTA", "ADE", "AO - Saturday, April 8 - 7:10 PM"],
+        ["R3", "FRE", "WBD", "DS - Saturday, April 8 - 5:40 PM"],
+        ["R3", "STK", "BRI", "ES - Sunday, April 9 - 1:10 PM"],
+        ["R3", "CAR", "ESS", "MCG - Sunday, April 9 - 3:20 PM"],
+        ["R3", "GCS", "HAW", "MS - Sunday, April 9 - 4:40 PM"],
+        ["R4", "WCE", "SYD", "DS - Thursday, April 13 - 6:10 PM"],
+        ["R4", "NTH", "WBD", "ES - Friday, April 14 - 4:20 PM"],
+        ["R4", "MEL", "FRE", "MCG - Saturday, April 15 - 1:45 PM"],
+        ["R4", "GWS", "PTA", "MO - Saturday, April 15 - 4:35 PM"],
+        ["R4", "CAR", "GCS", "ES - Saturday, April 15 - 7:25 PM"],
+        ["R4", "ADE", "ESS", "AO - Saturday, April 15 - 7:10 PM"],
+        ["R4", "COL", "STK", "ES - Sunday, April 16 - 3:20 PM"],
+        ["R4", "BRI", "RIC", "G - Sunday, April 16 - 4:40 PM"],
+        ["R4", "HAW", "GEE", "MCG - Monday, April 17 - 3:20 PM"]
     ]
 }
 
