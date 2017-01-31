@@ -31,7 +31,7 @@ function show_remaining() {
     };
     for (i = 0; i < 18; i++) {
         var img_id = $("select#ladder_team_" + i).val().toLowerCase();
-        $("td.remaining_teams div#" + img_id + ".team_block").hide();
+        $("span#ladderimg_" + i + " div.team_block").removeAttr("id");
     }
 }
 
