@@ -35,6 +35,17 @@ function show_remaining_teams() {
     }
 }
 
+function set_next_free(team_id) {
+    var i;
+    for (i = 0; i < 18; i++) {
+        var position_val = $("select#ladder_team_" + i).val();
+        if (position_val === "") {
+            $("select#ladder_team_" + i).val(team_id.toUpperCase());
+            $("span#ladderimg_" + i + " div.team_block").attr("id", team_id);
+        }
+    }
+}
+
 function set_image(id, value) {
     var low_val = value.toLowerCase();
     $("span#ladderimg_" + id + " div.team_block").attr("id", low_val);
