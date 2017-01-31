@@ -1,5 +1,26 @@
 // By Cory
 // http://s1.zetaboards.com/Cory/index/
+var start_dates = {
+    dates: [
+        ["R1", "3","23","19:20"],
+        ["R2", "3", "30", "19:20"],
+        ["R3", "4", "7", "19:20"],
+        ["R4", "4", "13", "19:20"],
+        ["R5", "4", "21", "19:20"]
+    ]
+}
+        
+function change_counter(round_no) {
+    var i;
+    var dates = start_dates.dates;
+    var len = dates.length;
+    for (i = 0; i < len; i++) {
+        if (dates[i][0] === round_no) {
+            $('div.countdown_div').html("[countdown=" + dates[i][0] + ", " + dates[i][1] + "/" + dates[i][2] + "/" + dates[i][3] + "]");
+        }
+    }
+    set_up_countdown();
+}
 
 function set_up_countdown() {
     $('div.countdown_div').each(function () {
@@ -146,3 +167,7 @@ function set_up_countdown() {
     changeText('num23', '11');
     changeText('num0', '12');
 }
+
+$(function () {
+    change_counter(tipping_data.round);
+});
