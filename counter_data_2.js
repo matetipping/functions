@@ -113,7 +113,14 @@ function set_up_countdown() {
                     });
                 }
             });
-        }
+        }    
+        if ($('span.count_body:contains(This countdown has ended)').length && $('select#tipping_roundselector').val() === tipping_data.round) {
+            $('div#tipping').hide();
+            $('div#locked_form').show();
+        } else {
+            $('div#tipping').show();
+            $('div#locked_form').hide();
+        }   
     }
 
     window.setInterval(repeat, 1000);
