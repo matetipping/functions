@@ -116,13 +116,8 @@ function set_up_countdown() {
         }
     }
 
-    if (realtime === 1) {
-        window.setInterval(repeat, 1000);
-    } else {
-        repeat();
-        window.setTimeout(repeat, 1000);
-    }
-
+    window.setInterval(repeat, 1000);
+    
     function changeText(className, number) {
         $('span.countdown').each(function () {
             if ($(this).find('span.hours span[class*="num"]').attr('class') === className) {
