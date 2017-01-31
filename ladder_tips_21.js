@@ -42,6 +42,7 @@ function set_next_free(team_id) {
         if (position_val === "") {
             $("select#ladder_team_" + i).val(team_id.toUpperCase());
             $("span#ladderimg_" + i + " div.team_block").attr("id", team_id);
+            ladder_change(i.toString(), team_id);
             return;
         }
     }
@@ -62,6 +63,13 @@ function remove_team(value) {
              $("select#ladder_team_" + i).val("");
          }
     }
+}
+
+function ladder_change(id, value) {
+    remove_team(this.value);
+    set_image(id, this.value);
+    show_submit();
+    show_remaining_teams();
 }
 
 function show_submit() {
