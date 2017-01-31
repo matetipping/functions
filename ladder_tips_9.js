@@ -6,10 +6,18 @@ var ladder_data = {
 }
 
 function swap_teams(idA, idB) {
-    var tempA = $("span#ladderimg_" + idA + " div.team_block").attr("id");
-    var tempB = $("span#ladderimg_" + idB + " div.team_block").attr("id");
-    remove_team(tempA);
-    remove_team(tempB);
+    if ($("span#ladderimg_" + idA + " div.team_block").is('[id]')) {
+        var tempA = $("span#ladderimg_" + idA + " div.team_block").attr("id");
+        remove_team(tempA);
+    } else {
+        var tempA = "";
+    }
+    if ($("span#ladderimg_" + idB + " div.team_block").is('[id]')) {
+        var tempB = $("span#ladderimg_" + idB + " div.team_block").attr("id");
+        remove_team(tempB);
+    } else {
+        var tempB = "";
+    }
     $("span#ladderimg_" + idA + " div.team_block").attr("id", tempB);
     $("span#ladderimg_" + idB + " div.team_block").attr("id", tempA);
     $("select#ladder_team_" + idA).val(tempB.toUpperCase());
