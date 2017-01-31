@@ -146,7 +146,3 @@ function set_up_countdown() {
     changeText('num23', '11');
     changeText('num0', '12');
 }
-
-$(function () {
-    set_up_countdown();
-});
