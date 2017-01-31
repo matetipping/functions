@@ -42,7 +42,8 @@ function set_next_free(team_id) {
         if (position_val === "") {
             $("select#ladder_team_" + i).val(team_id.toUpperCase());
             $("span#ladderimg_" + i + " div.team_block").attr("id", team_id);
-            ladder_change(i.toString(), team_id);
+            show_submit();
+            show_remaining_teams();
             return;
         }
     }
