@@ -5,6 +5,15 @@ var ladder_data = {
     ]
 }
 
+function swap_teams(idA, idB) {
+    var tempA = $("span#ladderimg_" + idA + " div.team_block").attr("id");
+    var tempB = $("span#ladderimg_" + idB + " div.team_block").attr("id");
+    remove_team(tempA);
+    remove_team(tempB);
+    $("span#ladderimg_" + idA + " div.team_block").attr("id", "tempB");
+    var tempA = $("span#ladderimg_" + idA + " div.team_block").attr("id", "tempA");
+}
+
 function set_image(id, value) {
     var low_val = value.toLowerCase();
     $("span#ladderimg_" + id + " div.team_block").attr("id", low_val);
