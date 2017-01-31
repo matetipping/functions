@@ -245,7 +245,7 @@ function set_names(player_name, opponent_name) {
 $(function () {
     var me = get_this_player();
     var i;
-    var round_fix = find_round_tips(round_no, fixture_full)[0];
+    var round_fix = find_round_tips(tipping_data.round, tipping_data.fixtures)[0];
     var len = round_fix.length;
     var player_check = "";
     var them = get_opponent(me, tipping_data.round, tipping_data.fixtures);
