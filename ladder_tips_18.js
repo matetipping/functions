@@ -25,7 +25,7 @@ function swap_teams(idA, idB) {
 }
 
 function show_remaining_teams() {
-    $("div.team_block[alt]").each(function {
+    $("div.team_block[alt]").each(function() {
         $(this).show();
     });
     var i;
