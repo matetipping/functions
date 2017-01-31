@@ -30,7 +30,8 @@ function show_remaining() {
         $(this).show();
     };
     for (i = 0; i < 18; i++) {
-        var img_id = $("span#ladderimg_" + i + " div.team_block").attr("id");
+        var img_id = $("select#ladder_team_" + i).val().toLowerCase();
+        $("td.remaining_teams div#" + img_id + ".team_block").hide();
     }
 }
 
