@@ -257,5 +257,5 @@ $(function () {
 	    return;
 	}
     }
-    change_games("forward", me, tipping_data.round, tipping_data.fixtures);
+    change_scores("forward");
 });
