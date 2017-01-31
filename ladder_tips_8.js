@@ -11,7 +11,9 @@ function swap_teams(idA, idB) {
     remove_team(tempA);
     remove_team(tempB);
     $("span#ladderimg_" + idA + " div.team_block").attr("id", tempB);
-    var tempA = $("span#ladderimg_" + idA + " div.team_block").attr("id", tempA);
+    $("span#ladderimg_" + idB + " div.team_block").attr("id", tempA);
+    $("select#ladder_team_" + idA).val(tempB.toUpperCase());
+    $("select#ladder_team_" + idB).val(tempA.toUpperCase());
 }
 
 function set_image(id, value) {
