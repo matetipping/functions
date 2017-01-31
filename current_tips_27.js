@@ -215,7 +215,18 @@ function change_scores(direction) {
     var player_name = $("span#name_user").html();
     var round_no = tipping_data.round;
     var fixture_full = tipping_data.fixtures;
-    change_games(direction, player_name, round_no, fixture_full);
+    var i;
+    var len = fixture_full.length;
+    var round_fix = find_round_tips(round_no, fixture_full);
+    var player_check = "";
+    for (i = 0; i < len; i++) {
+        player_check = round_fix[i][1];
+	if (player_check === player_name) {
+	    change_games(direction, player_name, round_no, fixture_full);
+	    return;
+	}
+    }
+    change_games(direction, fixture_full(len - 1), round_no, fixture_full);
 }
 
 function set_scores(player_name, opponent_name) {
