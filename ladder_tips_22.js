@@ -66,8 +66,8 @@ function remove_team(value) {
 }
 
 function ladder_change(id, value) {
-    remove_team(this.value);
-    set_image(id, this.value);
+    remove_team(value);
+    set_image(id, value);
     show_submit();
     show_remaining_teams();
 }
