@@ -86,7 +86,7 @@ function set_up_countdown(target_date) {
             });            
         }
         
-        if ($('span.count_body:contains(LOCKED)').length {
+        if ($('span.count_body:contains(LOCKED)').length) {
             $('div#tipping').hide();
             $('div#locked_form').show();
         } else {
