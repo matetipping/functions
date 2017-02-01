@@ -47,9 +47,9 @@ function change_counter(round_no) {
 
 function set_up_countdown(target_date) {
     clearInterval(start_dates.repeater);
-    start_dates.repeater = setInterval(repeat, 1000);
+    start_dates.repeater = setInterval(repeat(target_date), 1000);
     
-    function repeat() {
+    function repeat(target_date) {
         if ($('span.countdown').length) {
             $('span.countdown').each(function () {
                 var current = new Date().getTime();
