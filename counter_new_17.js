@@ -38,7 +38,9 @@ function change_counter(round_no) {
     var len = dates.length;
     for (i = 0; i < len; i++) {
         if (dates[i][0] === round_no) {
-            var target_date = new Date(dates[i][1]).getTime();
+            var target = new Date(dates[i][1])
+            target.setTime(target.getTime() + target.getTimezoneOffset()*60*1000);
+            var target_date = target.getTime();
         }
     }
     set_up_countdown(target_date);
@@ -54,7 +56,7 @@ function set_up_countdown(target_date) {
                 var current = new Date().getTime();
                 var rem = target_date - current;
                 if (rem < 0) {
-                    $(this).find('span.count_body').html('LOCKED');
+                    $(this).find('span.count_body').hide();
                     $('div#tipping').hide();
                     $('div#locked_form').show();
                 } else {
