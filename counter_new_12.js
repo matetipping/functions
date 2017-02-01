@@ -55,6 +55,7 @@ function set_up_countdown(target_date, repeater) {
             $('span.countdown').each(function () {
                 if (rem < 0) {
                     $(this).find('span.count_body').html('LOCKED');
+                    return;
                 } else {
                     var current = new Date().getTime();
                     var rem = target_date - current;
