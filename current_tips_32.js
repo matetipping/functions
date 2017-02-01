@@ -150,7 +150,13 @@ function get_opponent(player_name, round_no, fixture_full) {
 
 function calculate_scores(player_name, opponent, results_name, round_no, tips_full) {
     var player_tips = find_player_tip_from_round(round_no, player_name, tips_full);
+    if (player_tips.length == 0) {
+        player_tips = get_ladder_tips(round_no, player_name);
+    }
     var opponent_tips = find_player_tip_from_round(round_no, opponent, tips_full);
+    if (opponent_tips.length == 0) {
+        opponent_tips = get_ladder_tips(round_no, opponent);
+    }
     var results = find_player_tip_from_round(round_no, results_name, tips_full);
     var round_length = (results.length - 4)/2;
     
