@@ -53,7 +53,7 @@ function set_up_countdown(target_date, repeater) {
     function repeat() {
         if ($('span.countdown').length) {
             $('span.countdown').each(function () {
-                if (rem <= 0) {
+                if (rem <== 0) {
                     $(this).find('span.count_body').html('LOCKED');
                 } else {
                     var current = new Date().getTime();
