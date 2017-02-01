@@ -1,9 +1,9 @@
 var start_dates = {
     repeater: null,
     dates: [
-        ["R1", "February 2, 2017 12:16:00"],
-        ["R2", "March 31, 2017 06:20:00"],
-        ["R3", "April 8, 2017 05:20:00"],
+        ["R1", "March 23, 2017 19:20:00 GMT+1100"],
+        ["R2", "March 30, 2017 19:20:00 GMT+1100"],
+        ["R3", "April 7, 2017 19:50:00 GMT+1000"],
         ["R4", "4", "13", "19:00"],
         ["R5", "4", "21", "19:00"],
         ["R6", "4", "28", "19:00"],
@@ -38,9 +38,7 @@ function change_counter(round_no) {
     var len = dates.length;
     for (i = 0; i < len; i++) {
         if (dates[i][0] === round_no) {
-            var target = new Date(dates[i][1])
-            target.setTime(target.getTime() + target.getTimezoneOffset()*60*1000);
-            var target_date = target.getTime();
+            var target_date = new Date(dates[i][1]).getTime();
         }
     }
     set_up_countdown(target_date);
