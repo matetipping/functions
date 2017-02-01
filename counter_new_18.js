@@ -68,6 +68,7 @@ function set_up_countdown(target_date) {
                     rem = rem % 60000;
                     var rem_secs = Math.floor(rem / 1000);
                     
+                    $(this).find('span.count_body').show();
                     $('div#tipping').show();
                     $('div#locked_form').hide();
                     
