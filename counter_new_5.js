@@ -46,8 +46,8 @@ function change_counter(round_no) {
 function set_up_countdown(target_date) {
     var current = new Date().getTime();
     var rem = target_date - current;
-    
-    clearInterval(window);
+    var repeater = null;
+    clearInterval(repeater);
     
     function repeat() {
         if ($('span.countdown').length) {
@@ -97,7 +97,7 @@ function set_up_countdown(target_date) {
         }   
     }
 
-    window.setInterval(repeat, 1000);
+    repeater.setInterval(repeat, 1000);
 }
 
 $(function () {
