@@ -9,8 +9,15 @@ var start_dates = {
         ["R5", "4", "21", "19:20"]
     ]
 }
+
+function change_game_players(round_no) {
+    var me = get_this_player();
+    var you = get_opponent(me, round_no, tipping_data.fixtures);
+    $("span#tipping_game_players").html(me + " vs " + you);
+}
         
 function change_counter(round_no) {
+    change_game_players(round_no);
     var i;
     var dates = start_dates.dates;
     var len = dates.length;
