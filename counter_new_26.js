@@ -1,7 +1,7 @@
 var start_dates = {
     repeater: null,
     dates: [
-        ["R1", "February 2, 2017 11:20:00"],
+        ["R1", "February 2, 2017 12:20:00"],
         ["R2", "March 31, 2017 06:20:00"],
         ["R3", "April 8, 2017 05:20:00"],
         ["R4", "4", "13", "19:00"],
