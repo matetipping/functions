@@ -47,7 +47,10 @@ function set_up_countdown(target_date) {
     var current = new Date().getTime();
     var rem = target_date - current;
     var repeater = null;
-    clearInterval(repeater);
+    if (repeater != null) {
+        clearInterval(repeater);
+    }
+    var repeater = setInterval(repeat, 1000);
     
     function repeat() {
         if ($('span.countdown').length) {
@@ -96,8 +99,7 @@ function set_up_countdown(target_date) {
             $('div#locked_form').hide();
         }   
     }
-
-    repeater.setInterval(repeat, 1000);
+    
 }
 
 $(function () {
