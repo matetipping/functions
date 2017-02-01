@@ -1,4 +1,5 @@
 var start_dates = {
+    repeater: null,
     dates: [
         ["R1", "March 23, 2017 19:20:00"],
         ["R2", "March 30, 2017 19:20:00"],
@@ -43,14 +44,11 @@ function change_counter(round_no) {
     set_up_countdown(target_date);
 }
 
-function set_up_countdown(target_date) {
+function set_up_countdown(target_date, repeater) {
     var current = new Date().getTime();
     var rem = target_date - current;
-    var repeater = null;
-    if (repeater != null) {
-        clearInterval(repeater);
-    }
-    var repeater = setInterval(repeat, 1000);
+    clearInterval(start_dates.repeater);
+    start_dates.repeater = setInterval(repeat, 1000);
     
     function repeat() {
         if ($('span.countdown').length) {
