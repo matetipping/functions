@@ -46,7 +46,9 @@ function change_counter(round_no) {
 function set_up_countdown(target_date) {
     var current = new Date().getTime();
     var rem = target_date - current;
-    window.clearInterval();
+    
+    $('div.countdown_div').html('<span class="countdown"><span class="count_body"><span class="c_days"></span> DAYS | <span class="c_hours"></span><span class="sep"> : </span><span class="c_minutes"></span><span class="sep"> : </span><span class="c_seconds"></span></span></span>');
+
     
     function repeat() {
         if ($('span.countdown').length) {
