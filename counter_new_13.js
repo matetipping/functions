@@ -39,26 +39,26 @@ function change_counter(round_no) {
     for (i = 0; i < len; i++) {
         if (dates[i][0] === round_no) {
             var target_date = new Date(dates[i][1]).getTime();
+            target_date = setTime(target_date.getTime() + target_date.getTimezoneOffset()*60*1000);
         }
     }
     set_up_countdown(target_date);
 }
 
 function set_up_countdown(target_date, repeater) {
-    var current = new Date().getTime();
-    var rem = target_date - current;
     clearInterval(start_dates.repeater);
     start_dates.repeater = setInterval(repeat, 1000);
     
     function repeat() {
         if ($('span.countdown').length) {
             $('span.countdown').each(function () {
+                var current = new Date().getTime();
+                var rem = target_date - current;
                 if (rem < 0) {
                     $(this).find('span.count_body').html('LOCKED');
-                    return;
+                    $('div#tipping').hide();
+                    $('div#locked_form').show();
                 } else {
-                    var current = new Date().getTime();
-                    var rem = target_date - current;
                     var rem_days = Math.floor(rem / 86400000);
                     rem = rem % 86400000;
                     var rem_hours = Math.floor(rem / 3600000);
@@ -66,6 +66,9 @@ function set_up_countdown(target_date, repeater) {
                     var rem_mins = Math.floor(rem / 60000);
                     rem = rem % 60000;
                     var rem_secs = Math.floor(rem / 1000);
+                    
+                    $('div#tipping').show();
+                    $('div#locked_form').hide();
                     
                     $(this).find('span.c_days').html(rem_days);
                     
@@ -89,16 +92,7 @@ function set_up_countdown(target_date, repeater) {
                 }
             });            
         }
-        
-        if ($('span.count_body:contains(LOCKED)').length) {
-            $('div#tipping').hide();
-            $('div#locked_form').show();
-        } else {
-            $('div#tipping').show();
-            $('div#locked_form').hide();
-        }   
     }
-    
 }
 
 $(function () {
