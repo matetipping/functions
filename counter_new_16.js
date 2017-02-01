@@ -39,7 +39,6 @@ function change_counter(round_no) {
     for (i = 0; i < len; i++) {
         if (dates[i][0] === round_no) {
             var target_date = new Date(dates[i][1]).getTime();
-            target_date = setTime(target_date.getTime() + target_date.getTimezoneOffset()*60*1000);
         }
     }
     set_up_countdown(target_date);
@@ -47,9 +46,9 @@ function change_counter(round_no) {
 
 function set_up_countdown(target_date) {
     clearInterval(start_dates.repeater);
-    start_dates.repeater = setInterval(repeat(target_date), 1000);
+    start_dates.repeater = setInterval(repeat, 1000);
     
-    function repeat(target_date) {
+    function repeat() {
         if ($('span.countdown').length) {
             $('span.countdown').each(function () {
                 var current = new Date().getTime();
