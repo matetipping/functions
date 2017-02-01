@@ -24,7 +24,7 @@ function change_counter(round_no) {
 
 function set_up_countdown() {
     $('div.countdown_div').each(function () {
-        $(this).html($(this).html().replace(/\[countdown=(.+?), (\d+)\/(\d+)\/(\d+):(\d+)\]/gi, '<span class="countdown"><em style="display: none">$1: <span class="month"><span class="zero">0</span><span class="num">$2</span></span>/<span class="date"><span class="zero">0</span><span class="num">$3</span></span> <span class="hours"><span class="zero">0</span><span class="num$4">$4</span></span>:<span class="minutes"><span class="zero">0</span><span class="num">$5</span></span> <span class="period">AM</span></em><span class="count_body"><span class="c_date"></span><br>DAYS<br><span class="c_hours"></span><span class="sep">:</span><span class="c_minutes"></span><span class="sep">:</span><span class="c_seconds"></span></span></span>'));
+        $(this).html($(this).html().replace(/\[countdown=(.+?), (\d+)\/(\d+)\/(\d+):(\d+)\]/gi, '<span class="countdown"><em style="display: none">$1: <span class="month"><span class="zero">0</span><span class="num">$2</span></span>/<span class="date"><span class="zero">0</span><span class="num">$3</span></span> <span class="hours"><span class="zero">0</span><span class="num$4">$4</span></span>:<span class="minutes"><span class="zero">0</span><span class="num">$5</span></span> <span class="period">AM</span></em><span class="count_body"><span class="c_date"></span> DAYS | <span class="c_hours"></span><span class="sep">:</span><span class="c_minutes"></span><span class="sep">:</span><span class="c_seconds"></span></span></span>'));
     });
 
     function repeat() {
