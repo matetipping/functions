@@ -45,7 +45,7 @@ function change_counter(round_no) {
     set_up_countdown(target_date);
 }
 
-function set_up_countdown(target_date, repeater) {
+function set_up_countdown(target_date) {
     clearInterval(start_dates.repeater);
     start_dates.repeater = setInterval(repeat, 1000);
     
