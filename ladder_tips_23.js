@@ -5,6 +5,18 @@ var ladder_data = {
     ]
 }
 
+function get_ladder_tips(round_no, name) {
+    var tips = ladder_data.tips;
+    var fixtures = afl_data.fixtures;
+    var round_tips = find_player_tip_from_round(round_no, name, tips);
+    var round_fixtures = find_round_tips(round_no, fixtures)[0];
+    
+    
+    // To be completed //
+    
+    
+}
+
 function swap_teams(idA, idB) {
     if ($("span#ladderimg_" + idA + " div.team_block").is('[id]')) {
         var tempA = $("span#ladderimg_" + idA + " div.team_block").attr("id");
