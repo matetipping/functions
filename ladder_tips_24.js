@@ -8,13 +8,40 @@ var ladder_data = {
 function get_ladder_tips(round_no, name) {
     var tips = ladder_data.tips;
     var fixtures = afl_data.fixtures;
-    var round_tips = find_player_tip_from_round(round_no, name, tips);
-    var round_fixtures = find_round_tips(round_no, fixtures)[0];
+    var round_fixtures = find_round_tips(round_no, fixtures);
+    var results = find_player_tip_from_round(round_no, tipping_data.admin, tipping_data.tips);
+    var i;
+    var len = tips.length;
     
+    for (i = 0; i < len; i++) {
+        if (tips[i][0] === name) {
+            var ladder_tips = tips[i];
+            i = len;
+        }
+    }
     
-    // To be completed //
+    var return_tips = [round_no, name];
+    var scale_factor = 3;
     
+    for (i = 0; i < 9; i++) {
+        var first_team = round_fixtures[i][1];
+        var second_team = round_fixtures[i][2];
+        var first_pos = ladder_tips.indexOf(first_team);
+        var second_pos = ladder_tips.indexOf(second_team);
+        var diff = Math.abs(first_pos - second_pos);
+        var margin = diff*scale_factor;
+        if (first_pos > second_pos) {
+            var winning_team = second_pos;
+        } else {
+            var winning_team = first_pos;
+        }
+        
+        return_tips.push(winning_team);
+        return_tips.push(scale_factor);
+    }
     
+    return_tips.push(0);
+    return_tips.push(0);
 }
 
 function swap_teams(idA, idB) {
