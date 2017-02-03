@@ -11,7 +11,7 @@ var tipping_data = {
 	["R2", "Administrator", "CAR", 2, "HAW", 50, 23, 0],
 	["R3", "Administrator", "CAR", 2, "HAW", 50, 12, 5],
 	["R4", "Administrator", "CAR", 2, "HAW", 50, 22, 7],
-	["R5", "Administrator", "CAR", 2, "HAW", 50, "", ""],
+	["R5", "Administrator", "CAR", 2, "HAW", 50, 6, 22]
     ],
     fixtures: [
         ["R1", "ciniboi_12", "Daniel Terrington", "Administrator", "Jono22", "Steve", "Craig Terrington"],
