@@ -41,15 +41,6 @@ function get_bonus_tip_count(player_name) {
     var len = player_tips.length;
     var count_disp = 0;
     var count_scor = 0;
-    for (i = 0; i < len; i++) {
-        var tlen = player_tips[i].length;
-	if (typeof player_tips[i][tlen - 2] === "number") {
-	    count_disp ++;
-	}
-	if (typeof player_tips[i][tlen - 1] === "number") {
-	    count_scor ++;
-	}
-    }
     return [count_disp, count_scor];
 }
 
