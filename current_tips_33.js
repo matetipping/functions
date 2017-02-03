@@ -34,6 +34,40 @@ var tipping_data = {
     ]
 }
 
+function get_bonus_tip_count(player_name) {
+    var tips = tipping_data.tips;
+    var player_tips = find_player_tips(player_name, tips);
+    var i;
+    var len = player_tips.length;
+    var count_disp = 0;
+    var count_scor = 0;
+    for (i = 0; i < len; i++) {
+        var tlen = player_tips[i].length;
+	if (typeof player_tips[i][tlen - 2] === "number") {
+	    count_disp ++;
+	}
+	if (typeof player_tips[i][tlen - 1] === "number") {
+	    count_scor ++;
+	}
+    }
+    return [count_disp, count_scor];
+}
+
+function set_bonus_remaining(player_name) {
+    var bonuses = get_bonus_tip_count(player_name);
+    var count_disp = bonuses[0];
+    var count_scor = bonuses[1];
+    var rem_disp = 10 - count_disp;
+    var rem_scor = 10 - count_scor;
+    $("h4#tipping_remaining_disp").html(rem_disp + "x");
+    $("h4#tipping_remaining_scor").html(rem_scor + "x");
+    if (rem_disp <= 0) {
+        $("input#tipping_player_disposals").parents('tr').hide();
+    if (rem_scor <= 0) {
+	$("input#tipping_player_scorer").parents('tr').hide();
+    }
+}
+
 // returns array table of all tips from a round.
 function find_round_tips(round_no, a_list) {
     var round_chk = "-"; var len = a_list.length; var a_tip = []; var new_list = [];
