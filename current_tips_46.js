@@ -67,10 +67,8 @@ function set_bonus_remaining(player_name) {
     var bonuses = get_bonus_tip_count(player_name);
     var count_disp = bonuses[0];
     var count_scor = bonuses[1];
-    var rem_disp = 10 - count_disp;
-    var rem_scor = 10 - count_scor;
-    $("h4#tipping_remaining_disp").html(rem_disp + " remaining:");
-    $("h4#tipping_remaining_scor").html(rem_scor + " remaining:");
+    $("h4#tipping_remaining_disp").html(count_disp + "/10 used:");
+    $("h4#tipping_remaining_scor").html(count_scor + "/10 used:");
     if (rem_disp <= 0) {
         $("input#tipping_player_disposals").parents('tr').hide();
     }
