@@ -305,6 +305,7 @@ $(function () {
     var them = get_opponent(me, tipping_data.round, tipping_data.fixtures);
     set_scores(me, them);
     set_names(me, them);
+    set_bonus_remaining(me);
     var i;
     var round_fix = find_round_tips(tipping_data.round, tipping_data.fixtures)[0];
     var len = round_fix.length;
