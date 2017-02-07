@@ -1,10 +1,3 @@
-var ladder_data = {
-    tips: [
-        ["Administrator", "GWS", "WBD", "SYD", "ADE", "GEE", "HAW", "MEL", "STK", "WCE", "CAR", "PTA", "ESS", "COL", "RIC", "GCS", "NTH", "FRE", "BRI"],
-        []
-    ]
-}
-
 function swap_teams(idA, idB) {
     if ($("span#ladderimg_" + idA + " div.team_block").is('[id]')) {
         var tempA = $("span#ladderimg_" + idA + " div.team_block").attr("id");
