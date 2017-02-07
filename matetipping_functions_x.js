@@ -390,4 +390,14 @@ $(function () {
     set_emblem("emblem_user", me, emblem_data.emblems);
     set_emblem("emblem_opponent", them, emblem_data.emblems);
     set_topic_avatars(emblem_data.emblems);
+        for (i = 0; i < len; i++) {
+        player_check = round_fix[i];
+	    if (player_check === me) {
+	        return;
+	    }
+    }
+    me = round_fix[1];
+    set_emblem("emblem_user", me, emblem_data.emblems);
+    them = round_fix[2];
+    set_emblem("emblem_opponent", them, emblem_data.emblems);
 });
