@@ -377,12 +377,16 @@ $(function () {
     var round_fix = find_round_tips(tipping_data.round, tipping_data.fixtures)[0];
     var len = round_fix.length;
     var player_check = "";
+    var found = false;
     for (i = 0; i < len; i++) {
         player_check = round_fix[i];
-	if (player_check !== me) {
-	    me = round_fix[1];
-            them = round_fix[2];
+	if (player_check === me) {
+	    found = true;
 	}
+    }
+    if (found == false) {
+        me = round_fix[1];
+        them = round_fix[2];
     }
     set_scores(me, them);
     set_names(me, them);
