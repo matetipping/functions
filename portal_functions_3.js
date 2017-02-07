@@ -129,8 +129,83 @@ function set_all_matches(round_no) {
     }
 }
 
+// changes the players in a match when the round is changed.
+function change_game_players(round_no) {
+    var me = get_this_player();
+    var you = get_opponent(me, round_no, tipping_data.fixtures);
+    $("span#tipping_game_players").html(me + " vs " + you);
+}
+        
+// changes the counter when the round is changed.
+function change_counter(round_no) {
+    change_game_players(round_no);
+    var i;
+    var dates = afl_data.dates;
+    var len = dates.length;
+    for (i = 0; i < len; i++) {
+        if (dates[i][0] === round_no) {
+            var target_date = new Date(dates[i][1]).getTime();
+        }
+    }
+    set_up_countdown(target_date);
+}
+
+// sets up a new countdown with a given target date
+function set_up_countdown(target_date) {
+    clearInterval(afl_data.repeater);
+    repeat();
+    afl_data.repeater = setInterval(repeat, 1000);
+    
+    function repeat() {
+        if ($('span.countdown').length) {
+            $('span.countdown').each(function () {
+                var current = new Date().getTime();
+                var rem = target_date - current;
+                if (rem < 0) {
+                    $(this).find('span.count_body').hide();
+                    $('div#tipping').hide();
+                    $('div#locked_form').show();
+                } else {
+                    var rem_days = Math.floor(rem / 86400000);
+                    rem = rem % 86400000;
+                    var rem_hours = Math.floor(rem / 3600000);
+                    rem = rem % 3600000;
+                    var rem_mins = Math.floor(rem / 60000);
+                    rem = rem % 60000;
+                    var rem_secs = Math.floor(rem / 1000);
+                    
+                    $(this).find('span.count_body').show();
+                    $('div#tipping').show();
+                    $('div#locked_form').hide();
+                    
+                    $(this).find('span.c_days').html(rem_days);
+                    
+                    if (rem_hours < 10) {
+                        $(this).find('span.c_hours').html('0' + rem_hours);
+                    } else {
+                        $(this).find('span.c_hours').html(rem_hours);
+                    }
+                    
+                    if (rem_mins < 10) {
+                        $(this).find('span.c_minutes').html('0' + rem_mins);
+                    } else {
+                        $(this).find('span.c_minutes').html(rem_mins);
+                    }
+                    
+                    if (rem_secs < 10) {
+                        $(this).find('span.c_seconds').html('0' + rem_secs);
+                    } else {
+                        $(this).find('span.c_seconds').html(rem_secs);
+                    }
+                }
+            });            
+        }
+    }
+}
+
 $(function () {
     set_bonus_remaining(get_this_player());
     $("select#tipping_roundselector").val(tipping_data.round);
-    set_all_matches(tipping_data.round)
+    set_all_matches(tipping_data.round);
+    change_counter(tipping_data.round);
 });
