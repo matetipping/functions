@@ -373,31 +373,21 @@ function set_topic_avatars(emblems) {
 $(function () {
     var me = get_this_player();
     var them = get_opponent(me, tipping_data.round, tipping_data.fixtures);
-    set_scores(me, them);
-    set_names(me, them);
-    set_bonus_remaining(me);
     var i;
     var round_fix = find_round_tips(tipping_data.round, tipping_data.fixtures)[0];
     var len = round_fix.length;
     var player_check = "";
     for (i = 0; i < len; i++) {
         player_check = round_fix[i];
-	if (player_check === me) {
-	    return;
+	if (player_check !== me) {
+	    me = round_fix[1];
+            them = round_fix[2];
 	}
     }
-    change_scores("forward");
+    set_scores(me, them);
+    set_names(me, them);
+    set_bonus_remaining(me);
     set_emblem("emblem_user", me, emblem_data.emblems);
     set_emblem("emblem_opponent", them, emblem_data.emblems);
     set_topic_avatars(emblem_data.emblems);
-        for (i = 0; i < len; i++) {
-        player_check = round_fix[i];
-	    if (player_check === me) {
-	        return;
-	    }
-    }
-    me = round_fix[1];
-    set_emblem("emblem_user", me, emblem_data.emblems);
-    them = round_fix[2];
-    set_emblem("emblem_opponent", them, emblem_data.emblems);
 });
