@@ -386,7 +386,6 @@ $(function () {
     }
     set_scores(me, them);
     set_names(me, them);
-    set_bonus_remaining(me);
     set_emblem("emblem_user", me, emblem_data.emblems);
     set_emblem("emblem_opponent", them, emblem_data.emblems);
     set_topic_avatars(emblem_data.emblems);
