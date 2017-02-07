@@ -9,6 +9,10 @@ function set_bonus_remaining(player_name) {
         $("input#tipping_player_disposals").parents('tr').hide();
     }
     if (count_scor >= 10) {
-	      $("input#tipping_player_scorer").parents('tr').hide();
+        $("input#tipping_player_scorer").parents('tr').hide();
     }
 }
+
+$(function () {
+    set_bonus_remaining(get_this_player());
+});
