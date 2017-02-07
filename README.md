@@ -1,3 +1,3 @@
-# tipping
+# functions
 
-This repository is for javascript files related to the running of the tipping competition, including any required data.
+This repository is for javascript files containing functions relevant to particular pages of the MATE Tipping website.
