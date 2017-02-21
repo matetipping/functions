@@ -151,7 +151,7 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
 
 // returns the logged-in player's name
 function get_this_player() {
-    return $("div#top_info strong a").html ();
+    return $("div#top_info strong").text();
 }
 
 // returns the name of a given player's opponent in a round
