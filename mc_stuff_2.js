@@ -17,9 +17,9 @@ function change_career_options() {
 
 function show_career_level() {
     if ($("select#attr_career").val() === "0") {
-        $("input#attr_careerlvl").parent().attr("display", "none");
+        $("input#attr_careerlvl").parent().attr("style", "display: none");
     } else {
-        $("input#attr_careerlvl").parent().attr("display", "block");
+        $("input#attr_careerlvl").parent().attr("style", "display: block");
     }
 }
 
