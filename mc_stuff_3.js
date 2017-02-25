@@ -15,12 +15,23 @@ function change_career_options() {
     }
 }
 
+function change_careerlvl_options() {
+    var profession = $("select#attr_prof").val();
+    var career = $("select#attr_career").val();
+    if (((profession === "0") && ((career === "2") || (career === "3") || (career === "4"))) || ((profession === "4") && (career === "1")) {
+        $("select#attr_careerlvl").html("<option value='1'>Default trades available</option><option value='2'>No default trades</option>");
+    } else if (((profession === "3") && ((career === "2") || (career === "3"))) || ((profession === "4") && (career === "1")) {
+        $("select#attr_careerlvl").html("<option value='1'>Level 1 default trades available</option><option value='2'>Level 2 default trades available</option><option value='3'>No default trades</option>");
+    }
+}
+
 function show_career_level() {
     if ($("select#attr_career").val() === "0") {
-        $("input#attr_careerlvl").parent().attr("style", "display: none");
+        $("select#attr_careerlvl").parent().attr("style", "display: none");
     } else {
-        $("input#attr_careerlvl").parent().attr("style", "display: block");
+        $("select#attr_careerlvl").parent().attr("style", "display: block");
     }
+    change_careerlvl_options();
 }
 
 function remove_last_comma(command){        
