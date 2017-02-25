@@ -15,6 +15,14 @@ function change_career_options() {
     }
 }
 
+function show_career_level() {
+    if ($("select#attr_career").val() === "0") {
+        $("input#attr_careerlvl").parent().attr("display", "none");
+    } else {
+        $("input#attr_careerlvl").parent().attr("display", "block");
+    }
+}
+
 function remove_last_comma(command){        
     var n = command.lastIndexOf(", ");
     var a = command.substring(0,n) 
@@ -35,7 +43,9 @@ if (my_name !== "") {
     command_txt = command_txt + "CustomName: " + my_name + ", ";
 }
 command_txt = command_txt + "Profession: " + prof + ", ";
-command_txt = command_txt + "Career: " + career + ", ";
+if (career !== "0") {
+    command_txt = command_txt + "Career: " + career + ", ";
+}
 
 command_txt = remove_last_comma(command_txt);
 command_txt = command_txt + "}";
