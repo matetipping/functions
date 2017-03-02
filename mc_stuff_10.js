@@ -68,6 +68,7 @@ var z_loc = $("input#attr_z").val();
 var my_name = $("input#attr_name").val();
 var prof = $("select#attr_prof").val();
 var career = $("select#attr_career").val();
+var invinc = $("select#attr_invinc").val();
 
 var command_txt = "/summon Villager" + rel_pos + x_loc + rel_pos + y_loc + rel_pos + z_loc + " {";
 if (my_name !== "") {
@@ -78,6 +79,10 @@ if (career !== "0") {
     command_txt = command_txt + "Career: " + career + ", ";
     var career_lvl = $("select#attr_careerlvl").val();
     command_txt = command_txt + "CareerLevel: " + career_lvl + ", ";
+}
+
+if (invinc !== "0") {
+    command_txt = command_txt + "Invincibility: " + invinc + ", ";
 }
 
 command_txt = remove_last_comma(command_txt);
