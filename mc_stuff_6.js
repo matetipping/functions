@@ -31,7 +31,7 @@ function change_careerlvl_options() {
     } else if ((profession === "1") && (career === "2")) {
         $("select#attr_careerlvl").html("<option value='1'>Level 1: Compass</option><option value='2'>Level 2: Empty Map</option><option value='3'>Level 3: Exploration Map</option><option value='4'>No trade levels</option>");
     } else if ((profession === "2") && (career === "1")) {
-        $("select#attr_careerlvl").html("<option value='1'>Level 1: Stones</option><option value='2'>Eye of Ender & Glowstone</option><option value='3'>Level 3: Bottle o' enchanting</option><option value='4'>No trade levels</option>");
+        $("select#attr_careerlvl").html("<option value='1'>Level 1: Stones</option><option value='2'>Level 2: Eye of Ender & Glowstone</option><option value='3'>Level 3: Bottle o' enchanting</option><option value='4'>No trade levels</option>");
     } else if ((profession === "3") && (career === "1")) {
         $("select#attr_careerlvl").html("<option value='1'>Level 1: Iron</option><option value='2'>Level 2: Diamond</option><option value='3'>Level 3: Chain</option><option value='4'>No trade levels</option>");
     } else if ((profession === "3") && (career === "2")) {
