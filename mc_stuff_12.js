@@ -69,6 +69,7 @@ var my_name = $("input#attr_name").val();
 var prof = $("select#attr_prof").val();
 var career = $("select#attr_career").val();
 var invinc = $("select#attr_invinc").val();
+var willing = $("select#attr_willing").val();
 
 var command_txt = "/summon Villager" + rel_pos + x_loc + rel_pos + y_loc + rel_pos + z_loc + " {";
 if (my_name !== "") {
@@ -83,6 +84,10 @@ if (career !== "0") {
 
 if (invinc !== "0") {
     command_txt = command_txt + "Invincibility: " + invinc + ", ";
+}
+    
+if (willing !== "-") {
+    command_txt = command_txt + "Willing: " + willing + ", ";   
 }
 
 command_txt = remove_last_comma(command_txt);
