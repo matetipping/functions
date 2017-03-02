@@ -11,7 +11,7 @@ function change_career_options() {
     } else if (profession === "4") {
             $("select#attr_career").html("<option value='0'>None</option><option value='1'>Butcher</option><option value='2'>Leatherworker</option>");
     } else {
-            $("select#attr_career").html("<option value='0'>None</option><option value='1'>Nitwit</option>");
+            $("select#attr_career").html("<option value='0'>None</option>");
     }
 }
 
