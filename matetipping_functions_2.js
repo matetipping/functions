@@ -37,6 +37,10 @@ function get_ladder_tips(round_no, name) {
     // add the bonus tips.
     return_tips.push("");
     return_tips.push("");
+    return_tips.push("");
+    return_tips.push("");
+    return_tips.push("");
+    return_tips.push("");
     
     return return_tips;
 }
@@ -51,10 +55,10 @@ function get_bonus_tip_count(player_name) {
     var count_scor = 0;
     for (i = 0; i < len; i++) {
         var tlen = player_tips[i].length;
-	      if (typeof player_tips[i][tlen - 2] === "number") {
+	      if (typeof player_tips[i][tlen - 5] === "number") {
 	          count_disp ++;
 	      }
-	      if (typeof player_tips[i][tlen - 1] === "number") {
+	      if (typeof player_tips[i][tlen - 3] === "number") {
 	          count_scor ++;
 	      }
     }
@@ -186,23 +190,29 @@ function calculate_scores(player_name, opponent, results_name, round_no, tips_fu
         opponent_tips = get_ladder_tips(round_no, opponent);
     }
     var results = find_player_tip_from_round(round_no, results_name, tips_full);
-    var round_length = (results.length - 4)/2;
+    var round_length = (results.length - 8)/2;
     
     // checks if player tipped bonus tips and adds to score.
-    if (typeof player_tips[player_tips.length - 2] === "number") {
-        var player_total = player_tips[player_tips.length - 2];
+    if (typeof player_tips[player_tips.length - 5] === "number") {
+        var player_total = player_tips[player_tips.length - 5];
     } else {
         var player_total = 0;
+    }
+    if (typeof player_tips[player_tips.length - 3] === "number") {
+        player_total = player_total + player_tips[player_tips.length - 3];
     }
     if (typeof player_tips[player_tips.length - 1] === "number") {
         player_total = player_total + player_tips[player_tips.length - 1];
     }
 
     // checks if opponent tipped bonus tips and adds to score.
-    if (typeof opponent_tips[opponent_tips.length - 2] === "number") {
-        var opponent_total = opponent_tips[opponent_tips.length - 2];
+    if (typeof opponent_tips[opponent_tips.length - 5] === "number") {
+        var opponent_total = opponent_tips[opponent_tips.length - 5];
     } else {
         var opponent_total = 0;
+    }
+    if (typeof opponent_tips[opponent_tips.length - 3] === "number") {
+        opponent_total = opponent_total + opponent_tips[opponent_tips.length - 3];
     }
     if (typeof opponent_tips[opponent_tips.length - 1] === "number") {
         opponent_total = opponent_total + opponent_tips[opponent_tips.length - 1];
