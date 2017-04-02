@@ -1,3 +1,147 @@
+/* Form script by Reid of ZNR (resources.zetaboards.com)
+Keep this copyright in place
+Feel free to edit/redistribute */
+
+if (form_script.form_id.length) {
+    form_script.form_id.submit(function (e) {
+        e.returnValue = (e.preventDefault && e.preventDefault()) && false;
+
+        var f = form_script, sent = [0, 0], fields_orig = [], logged_in = !!$('#top_info strong a').length, fields,
+            sf = f.submission_formatting, username = $('#top_info strong a').text() || "Guest",
+            get_data = function (n, d) {
+                return $('input[name=' + n + ']', d).val();
+            },
+            special_tags = function (txt) {
+                return txt.replace(/{{user_name}}/gi, username).replace(/{{(\d+)}}/gi, function (t, i) {
+                    return fields_orig[(i - 1) + 'a'];
+                }).replace(/{{form}}/gi, fields).replace(/{{n}}/gi, "\n");
+            };
+
+                
+        if (!f.enable_guests && !logged_in) {
+            f.status_id.html(f.statuses.not_logged_in);
+            return;
+        }
+
+        f.status_id.html(f.statuses.first);
+
+        f.specific_id.find('tr').each(function () {
+            var t = this.getElementsByTagName('td');
+            // The second td should have one child, the element to enter data, and the first should have none -- solely text
+            if (t.length === 2 && $(t[1]).children().length === 1 && $(t[0]).children().length === 0) {
+                var x = $(t[1]).find(f.possible_elements).val();
+                fields_orig[fields_orig.length] = sf.before_question + t[0].innerHTML + sf.after_question + sf.separator + sf.before_response + x + sf.after_response;
+                fields_orig[(fields_orig.length - 1) + 'a'] = x;
+            }
+        });
+
+        fields = sf.before_all + fields_orig.join('\n') + sf.after_all;
+
+        // Take care special tags like {{user_name}}, {{form}}, {{0}}
+        for (var i in f) {
+            if (f.hasOwnProperty(i)) {
+                if (typeof f[i] === 'string') {
+                    f[i] = special_tags(f[i]);
+                } else if (f[i] instanceof Object) {
+                    for (var j in f[i]) {
+                        if (f[i].hasOwnProperty(j) && typeof f[i][j] === 'string') {
+                            f[i][j] = special_tags(f[i][j]);
+                        }
+                    }
+                }
+            }
+        }
+
+        if (f.pm.enabled && logged_in) {
+            f.status_id.html(f.statuses.first);
+            $.get(main_url + 'msg/?c=2', function (d) {
+                f.status_id.html(f.statuses.second);
+                $.post(main_url + 'msg/?c=3&sd=1', {
+                    xc: get_data('xc', d),
+                    msg: 0,
+                    convo: 0,
+                    fwd: 0,
+                    draft_edit: 0,
+                    secure: get_data('secure', d),
+                    name: f.pm.user,
+                    title: f.pm.title,
+                    post: f.pm.content || fields
+                }, function () {
+                    // Make sure the topic has sent as well
+                    sent[0] = 1;
+                    if (sent[1]) {
+                        f.status_id.html(f.statuses.done);
+                        var rURL = 'http://www.matetipping.com/forum/3204546/';
+                        location.href = rURL;
+                    }
+                });
+            });
+        } else {
+            sent[0] = 1;
+        }
+
+        if (f.topic.enabled) {
+            f.status_id.html(f.statuses.first);
+            $.get(main_url + 'post/?type=1&mode=1&f=' + f.topic.forum_id, function (d) {
+                f.status_id.html(f.statuses.second);
+
+                var callback = function (external_options) {
+                    $.post(main_url + 'post/', $.extend({
+                        xc: get_data('xc', d),
+                        ast: get_data('ast', d),
+                        mode: 1,
+                        type: 1,
+                        f: f.topic.forum_id,
+                        sd: 1,
+                        description: f.topic.description,
+                        title: f.topic.title,
+                        name: username, // Guest posting
+                        post: f.topic.content || fields
+                    }, external_options), function (g) {
+                        sent[1] = 1;
+                        if (sent[0]) {
+                            f.status_id.html(f.statuses.done);
+                            var rURL = 'http://www.matetipping.com/forum/3204546/';
+                            location.href = rURL;
+                        }
+                    });
+                };
+
+                // Make guest posting work; it's quite the chore
+                if (logged_in) {
+                    callback();
+                } else {
+                    var opt = {
+                        name: username,
+                        mode: 1,
+                        type: 1,
+                        ast: get_data('ast', d),
+                        f: f.topic.forum_id,
+                        sd: 2,
+                        id: get_data('id', d),
+                        key: get_data('key', d)
+                    };
+                    $.post(main_url + 'post/', opt, function (h) {
+                        callback($.extend(opt, {
+                           meta_time: get_data('meta_time', h),
+                           meta_diff: get_data('meta_diff', h),
+                           meta_tz: get_data('meta_tz', h),
+                           meta_plug: get_data('meta_plug', h),
+                           meta_x: get_data('meta_x', h), // screen.width, it seems
+                           meta_y: get_data('meta_y', h), // screen.height
+                           r2: get_data('r2', h),
+                           sd: 1,
+                           setskin: get_data('setskin', h)
+                        }));
+                    });
+                }
+            });
+        } else {
+            sent[1] = 1;
+        }
+    });
+}
+
 // sets the number of remaining bonus tips on the portal page.
 function set_bonus_remaining(player_name) {
     var bonuses = get_bonus_tip_count(player_name);
