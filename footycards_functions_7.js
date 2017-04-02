@@ -457,6 +457,44 @@ function get_card_dets(img_url) {
     }
 }
 
+function buyItem(itemID, userID, price) {
+	  var symbol = dynamo.server.modules.currency.settings.symbol;
+	  var formatted_price = dynamo.toolbox.format_number(price);
+	  var confirmation = confirm("Buy a footy card for " + symbol + formatted_price + " coins?");
+	  if(confirmation) {
+		    dynamo.module.load("currency", function() {
+			      dynamo.tip.prompt.ini({
+				        m : "currency",
+				        p1 : "donate",
+				        c : "finish",
+				        zbids : [userID],
+				        info : {
+					          user : userID,
+					          message : options.message.replace(/%ITEMID%/gi, itemID),
+					          amount : price
+				        }
+			      });
+		    });
+	  }
+  
+	  var img_a = randomise_card();
+	  var img_b = img_a;
+	  var img_c = img_a;
+	  while (img_a === img_b) {
+		    img_b = randomise_card();
+	  }
+	  do {
+		    do {
+            img_c = randomise_card();
+        } while (img_b === img_c);
+	  } while (img_a === img_c);
+	  $("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
+	  $("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
+	  $("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
+	  $("div#card_choices").attr("style", "display: block");
+    $("button#button_purchasecard").attr("style", "display: none");
+}
+
 function send_purchase(card_id) {
     var card_img= $("span a#card" + card_id + " img").attr("src");
     var card_name = get_card_dets(card_img);
