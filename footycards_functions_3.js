@@ -452,49 +452,67 @@ function get_card_dets(img_url) {
         return ["86", "Dustin Martin", "GWS Giants"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
         return ["87", "Dustin Martin", "Melbourne Demons"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
+    } else {
         return ["88", "Dustin Martin", "Western Bulldogs"];
     }
 }
 
 function buyItem(itemID, userID, price) {
-		var symbol = dynamo.server.modules.currency.settings.symbol;
-		var formatted_price = dynamo.toolbox.format_number(price);
-		var confirmation = confirm("Buy a footy card for " + symbol + formatted_price + " coins?");
-		if(confirmation) {
-			dynamo.module.load("currency", function() {
-				dynamo.tip.prompt.ini({
-					m : "currency",
-					p1 : "donate",
-					c : "finish",
-					zbids : [userID],
-					info : {
-						user : userID,
-						message : options.message.replace(/%ITEMID%/gi, itemID),
-						amount : price
-					}
-				});
+	var symbol = dynamo.server.modules.currency.settings.symbol;
+	var formatted_price = dynamo.toolbox.format_number(price);
+	var confirmation = confirm("Buy a footy card for " + symbol + formatted_price + " coins?");
+	if(confirmation) {
+		dynamo.module.load("currency", function() {
+			dynamo.tip.prompt.ini({
+				m : "currency",
+				p1 : "donate",
+				c : "finish",
+				zbids : [userID],
+				info : {
+					user : userID,
+					message : options.message.replace(/%ITEMID%/gi, itemID),
+					amount : price
+				}
 			});
-		}
-		
-		var img_a = randomise_card();
-		var img_b = img_a;
-		var img_c = img_a;
-		while (img_a === img_b) {
-			img_b = randomise_card();
-		}
+		});
+	}
+	
+	var img_a = randomise_card();
+	var img_b = img_a;
+	var img_c = img_a;
+	while (img_a === img_b) {
+		img_b = randomise_card();
+	}
+	do {
 		do {
-			do {
-                            img_c = randomise_card();
-                        } while (img_b === img_c);
-		} while (img_a === img_c);
-		$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
-		$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
-		$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
-		$("div#card_choices").attr("style", "display: block");
-                $("button#button_purchasecard").attr("style", "display: none");
+        		img_c = randomise_card();
+                } while (img_b === img_c);
+	} while (img_a === img_c);
+	$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
+	$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
+	$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
+	$("div#card_choices").attr("style", "display: block");
+        $("button#button_purchasecard").attr("style", "display: none");
 }
 
 function send_purchase(card_id) {
-    alert("Hi!");
+    var card_img= $("span a#card" + card_id + " img").attr("src");
+    var card_name = get_card_dets(card_img);
+    var card_id = $("div#top strong a").attr("href").split("/")[4];
+    var msg_content = '[' + card_id + ',"' + card_name[0] + ' - ' + card_name[1] + '","' + card_img + '","' + card_name[2] + '","2017"]'; 
+    var me = get_this_player();
+    var msg_title = me + " Card Purchase: " + card_name;
+    $.get(main_url + 'msg/?c=2', function (d) {
+        $.post(main_url + 'msg/?c=3&sd=1', {
+            xc: get_data('xc', d),
+            msg: 0,
+            convo: 0,
+            fwd: 0,
+            draft_edit: 0,
+            secure: get_data('secure', d),
+            name: "Administrator",
+            title: msg_title,
+            post: msg_content
+        });
+    });
 }
