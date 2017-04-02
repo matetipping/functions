@@ -499,20 +499,20 @@ function send_purchase(card_id) {
     var card_img= $("span a#card" + card_id + " img").attr("src");
     var card_name = get_card_dets(card_img);
     var card_id = $("div#top strong a").attr("href").split("/")[4];
-    var date_now = new Date();
     var msg_content = '[' + card_id + ',"' + card_name[0] + ' - ' + card_name[1] + '","' + card_img + '","' + card_name[2] + '","2017"]'; 
     var me = get_this_player();
     var msg_title = me + " Card Purchase: " + card_name;
     $.get(main_url + 'msg/?c=2', function (d) {
-    $.post(main_url + 'msg/?c=3&sd=1', {
-        xc: get_data('xc', d),
-        msg: 0,
-        convo: 0,
-        fwd: 0,
-        draft_edit: 0,
-        secure: get_data('secure', d),
-        name: f.pm.user,
-        title: f.pm.title,
-        post: msg_content
+        $.post(main_url + 'msg/?c=3&sd=1', {
+            xc: get_data('xc', d),
+            msg: 0,
+            convo: 0,
+            fwd: 0,
+            draft_edit: 0,
+            secure: get_data('secure', d),
+            name: f.pm.user,
+            title: f.pm.title,
+            post: msg_content
+        });
     });
 }
