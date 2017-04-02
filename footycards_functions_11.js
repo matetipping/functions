@@ -300,22 +300,22 @@ function get_card_dets(img_url) {
         return ["10", "Brisbane Lions", "Brisbane Lions"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005866/card_11_t_rockliff.png") {
         return ["11", "Tom Rockliff", "Brisbane Lions"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["12", "Dustin Martin", "Brisbane Lions"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["13", "Dustin Martin", "Brisbane Lions"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["14", "Dustin Martin", "Carlton Blues"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["15", "Dustin Martin", "Carlton Blues"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["16", "Dustin Martin", "Carlton Blues"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["17", "Dustin Martin", "Carlton Blues"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["18", "Dustin Martin", "Collingwood Magpies"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["19", "Dustin Martin", "Collingwood Magpies"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005867/card_12_d_zorko.png") {
+        return ["12", "Dayne Zorko", "Brisbane Lions"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005868/card_13_d_beams.png") {
+        return ["13", "Dayne Beams", "Brisbane Lions"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005869/card_14_c_blues.png") {
+        return ["14", "Carlton Blues", "Carlton Blues"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005870/card_15_b_gibbs.png") {
+        return ["15", "Bryce Gibbs", "Carlton Blues"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005871/card_16_p_cripps.png") {
+        return ["16", "Patrick Cripps", "Carlton Blues"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005872/card_17_s_docherty.png") {
+        return ["17", "Sam Docherty", "Carlton Blues"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005873/card_18_c_magpies.png") {
+        return ["18", "Collingwood Magpies", "Collingwood Magpies"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005874/card_19_s_pendlebury.png") {
+        return ["19", "Scott Pendlebury", "Collingwood Magpies"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
         return ["20", "Dustin Martin", "Collingwood Magpies"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
