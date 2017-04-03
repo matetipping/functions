@@ -316,144 +316,144 @@ function get_card_dets(img_url) {
         return ["18", "Collingwood Magpies", "Collingwood Magpies"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005874/card_19_s_pendlebury.png") {
         return ["19", "Scott Pendlebury", "Collingwood Magpies"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["20", "Dustin Martin", "Collingwood Magpies"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["21", "Dustin Martin", "Collingwood Magpies"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["22", "Dustin Martin", "Essendon Bombers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["23", "Dustin Martin", "Essendon Bombers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["24", "Dustin Martin", "Essendon Bombers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["25", "Dustin Martin", "Essendon Bombers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["26", "Dustin Martin", "Fremantle Dockers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["27", "Dustin Martin", "Fremantle Dockers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["28", "Dustin Martin", "Fremantle Dockers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["29", "Dustin Martin", "Fremantle Dockers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["30", "Dustin Martin", "Geelong Cats"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["31", "Dustin Martin", "Geelong Cats"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["32", "Dustin Martin", "Geelong Cats"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["33", "Dustin Martin", "Geelong Cats"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["34", "Dustin Martin", "Gold Coast Suns"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["35", "Dustin Martin", "Gold Coast Suns"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["36", "Dustin Martin", "Gold Coast Suns"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["37", "Dustin Martin", "Gold Coast Suns"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["38", "Dustin Martin", "GWS Giants"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["39", "Dustin Martin", "GWS Giants"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["40", "Dustin Martin", "GWS Giants"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["41", "Dustin Martin", "GWS Giants"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["42", "Dustin Martin", "Hawthorn Hawks"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["43", "Dustin Martin", "Hawthorn Hawks"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["44", "Dustin Martin", "Hawthorn Hawks"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["45", "Dustin Martin", "Hawthorn Hawks"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["46", "Dustin Martin", "Melbourne Demons"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["47", "Dustin Martin", "Melbourne Demons"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["48", "Dustin Martin", "Melbourne Demons"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["49", "Dustin Martin", "Melbourne Demons"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["50", "Dustin Martin", "North Melbourne"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["51", "Dustin Martin", "North Melbourne"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["52", "Dustin Martin", "North Melbourne"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["53", "Dustin Martin", "North Melbourne"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["54", "Dustin Martin", "Port Adelaide"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["55", "Dustin Martin", "Port Adelaide"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["56", "Dustin Martin", "Port Adelaide"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["57", "Dustin Martin", "Port Adelaide"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["58", "Dustin Martin", "Richmond Tigers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["59", "Dustin Martin", "Richmond Tigers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["60", "Dustin Martin", "Richmond Tigers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["61", "Dustin Martin", "Richmond Tigers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["62", "Dustin Martin", "St Kilda Saints"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["63", "Dustin Martin", "St Kilda Saints"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["64", "Dustin Martin", "St Kilda Saints"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["65", "Dustin Martin", "St Kilda Saints"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["66", "Dustin Martin", "Sydney Swans"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["67", "Dustin Martin", "Sydney Swans"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["68", "Dustin Martin", "Sydney Swans"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["69", "Dustin Martin", "Sydney Swans"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["70", "Dustin Martin", "West Coast Eagles"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["71", "Dustin Martin", "West Coast Eagles"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["72", "Dustin Martin", "West Coast Eagles"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["73", "Dustin Martin", "West Coast Eagles"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["74", "Dustin Martin", "Western Bulldogs"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["75", "Dustin Martin", "Western Bulldogs"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["76", "Dustin Martin", "Western Bulldogs"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["77", "Dustin Martin", "Western Bulldogs"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["78", "Dustin Martin", "Umpires"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["79", "Dustin Martin", "Umpires"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["80", "Dustin Martin", "Umpires"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["81", "Dustin Martin", "Adelaide Crows"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["82", "Dustin Martin", "Brisbane Lions"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["83", "Dustin Martin", "Carlton Blues"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["84", "Dustin Martin", "Collingwood Magpies"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["85", "Dustin Martin", "Fremantle Dockers"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["86", "Dustin Martin", "GWS Giants"];
-    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005857/card_2_d_martin.png") {
-        return ["87", "Dustin Martin", "Melbourne Demons"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005875/card_20_a_treloar.png") {
+        return ["20", "Adam Treloar", "Collingwood Magpies"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005876/card_21_s_sidebottom.png") {
+        return ["21", "Steele Sidebottom", "Collingwood Magpies"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005877/card_22_e_bombers.png") {
+        return ["22", "Essendon Bombers", "Essendon Bombers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005878/card_23_d_heppell.png") {
+        return ["23", "Dyson Heppell", "Essendon Bombers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005879/card_24_z_merrett.png") {
+        return ["24", "Zach Merrett", "Essendon Bombers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005880/card_25_j_daniher.png") {
+        return ["25", "Joe Daniher", "Essendon Bombers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005881/card_26_f_dockers.png") {
+        return ["26", "Fremantle Dockers", "Fremantle Dockers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005882/card_27_l_neale.png") {
+        return ["27", "Lachie Neale", "Fremantle Dockers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005883/card_28_d_mundy.png") {
+        return ["28", "David Mundy", "Fremantle Dockers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005884/card_29_s_hill.png") {
+        return ["29", "Stephen Hill", "Fremantle Dockers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005885/card_30_g_cats.png") {
+        return ["30", "Geelong Cats", "Geelong Cats"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005886/card_31_j_selwood.png") {
+        return ["31", "Joel Selwood", "Geelong Cats"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005887/card_32_h_taylor.png") {
+        return ["32", "Harry Taylor", "Geelong Cats"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005888/card_33_t_hawkins.png") {
+        return ["33", "Tom Hawkins", "Geelong Cats"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005889/card_34_g_suns.png") {
+        return ["34", "Gold Coast Suns", "Gold Coast Suns"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005890/card_35_g_ablett.png") {
+        return ["35", "Gary Ablett", "Gold Coast Suns"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005891/card_36_t_lynch.png") {
+        return ["36", "Tom Lynch", "Gold Coast Suns"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005892/card_37_a_hall.png") {
+        return ["37", "Aaron Hall", "Gold Coast Suns"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005893/card_38_g_giants.png") {
+        return ["38", "GWS Giants", "GWS Giants"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005894/card_39_s_coniglio.png") {
+        return ["39", "Stephen Coniglio", "GWS Giants"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005895/card_40_h_shaw.png") {
+        return ["40", "Heath Shaw", "GWS Giants"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005896/card_41_t_greene.png") {
+        return ["41", "Toby Greene", "GWS Giants"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005897/card_42_h_hawks.png") {
+        return ["42", "Hawthorn Hawks", "Hawthorn Hawks"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005898/card_43_c_rioli.png") {
+        return ["43", "Cyril Rioli", "Hawthorn Hawks"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005899/card_44_t_mitchell.png") {
+        return ["44", "Tom Mitchell", "Hawthorn Hawks"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005900/card_45_j_roughead.png") {
+        return ["45", "Jarryd Roughead", "Hawthorn Hawks"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005901/card_46_m_demons.png") {
+        return ["46", "Melbourne Demons", "Melbourne Demons"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005902/card_47_m_gawn.png") {
+        return ["47", "Max Gawn", "Melbourne Demons"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005903/card_48_j_viney.png") {
+        return ["48", "Jack Viney", "Melbourne Demons"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005904/card_49_j_lewis.png") {
+        return ["49", "Jordan Lewis", "Melbourne Demons"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005905/card_50_n_kangaroos.png") {
+        return ["50", "North Melbourne", "North Melbourne"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005906/card_51_t_goldstein.png") {
+        return ["51", "Todd Goldstein", "North Melbourne"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005907/card_52_j_ziebell.png") {
+        return ["52", "Jack Ziebell", "North Melbourne"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005908/card_53_s_gibson.png") {
+        return ["53", "Sam Gibson", "North Melbourne"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005909/card_54_p_power.png") {
+        return ["54", "Port Adelaide", "Port Adelaide"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005910/card_55_r_gray.png") {
+        return ["55", "Robbie Gray", "Port Adelaide"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005911/card_56_o_wines.png") {
+        return ["56", "Ollie Wines", "Port Adelaide"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005912/card_57_c_wingard.png") {
+        return ["57", "Chad Wingard", "Port Adelaide"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005913/card_58_r_tigers.png") {
+        return ["58", "Richmond Tigers", "Richmond Tigers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005914/card_59_a_rance.png") {
+        return ["59", "Alex Rance", "Richmond Tigers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005915/card_60_t_cotchin.png") {
+        return ["60", "Trent Cotchin", "Richmond Tigers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005916/card_61_j_riewoldt.png") {
+        return ["61", "Jack Riewoldt", "Richmond Tigers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005917/card_62_s_saints.png") {
+        return ["62", "St Kilda Saints", "St Kilda Saints"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005918/card_63_j_steven.png") {
+        return ["63", "Jack Steven", "St Kilda Saints"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005919/card_64_n_riewoldt.png") {
+        return ["64", "Nick Riewoldt", "St Kilda Saints"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005920/card_65_t_membrey.png") {
+        return ["65", "Tim Membrey", "St Kilda Saints"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005921/card_66_s_swans.png") {
+        return ["66", "Sydney Swans", "Sydney Swans"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005922/card_67_d_hannebery.png") {
+        return ["67", "Dan Hannebery", "Sydney Swans"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005923/card_68_l_parker.png") {
+        return ["68", "Luke Parker", "Sydney Swans"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005924/card_69_l_franklin.png") {
+        return ["69", "Lance Franklin", "Sydney Swans"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005925/card_70_w_eagles.png") {
+        return ["70", "West Coast Eagles", "West Coast Eagles"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005926/card_71_j_kennedy.png") {
+        return ["71", "Josh Kennedy", "West Coast Eagles"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005927/card_72_m_priddis.png") {
+        return ["72", "Matt Priddis", "West Coast Eagles"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005928/card_73_s_mitchell.png") {
+        return ["73", "Sam Mitchell", "West Coast Eagles"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005929/card_74_w_bulldogs.png") {
+        return ["74", "Western Bulldogs", "Western Bulldogs"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005930/card_75_l_hunter.png") {
+        return ["75", "Lachie Hunter", "Western Bulldogs"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005931/card_76_m_boyd.png") {
+        return ["76", "Matthew Boyd", "Western Bulldogs"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005932/card_77_j_stringer.png") {
+        return ["77", "Jake Stringer", "Western Bulldogs"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005933/card_78_s_mcinerny.png") {
+        return ["78", "Shane McInerny", "Umpires"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005934/card_79_m_stevic.png") {
+        return ["79", "Matt Stevic", "Umpires"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3005935/card_80_r_chamberlain.png") {
+        return ["80", "Ray Chamberlain", "Umpires"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008928/card_81_e_phillips.png") {
+        return ["81", "Erin Phillips", "Adelaide Crows"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008929/card_82_e_bates.png") {
+        return ["82", "Emily Bates", "Brisbane Lions"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008930/card_83_d_vescio.png") {
+        return ["83", "Darcy Vescio", "Carlton Blues"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008931/card_84_j_cameron.png") {
+        return ["84", "Jessica Cameron", "Collingwood Magpies"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008932/card_85_k_donnellan.png") {
+        return ["85", "Kara Donnellan", "Fremantle Dockers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008933/card_86_j_dalpos.png") {
+        return ["86", "Jess Dal Pos", "GWS Giants"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008934/card_87_d_pearce.png") {
+        return ["87", "Daisy Pearce", "Melbourne Demons"];
     } else {
-        return ["88", "Dustin Martin", "Western Bulldogs"];
+        return ["88", "Ellie Blackburn", "Western Bulldogs"];
     }
 }
 
