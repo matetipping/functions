@@ -475,7 +475,7 @@ function buyItem(itemID, userID, price) {
 						message : "I have purchased a card.",
 						amount : price
 					},
-					success: function(){
+					success: function() {
 						var img_a = randomise_card();
 						var img_b = img_a;
 						var img_c = img_a;
