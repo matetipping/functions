@@ -1,3 +1,4 @@
+//<![CDATA[
 // Created by Viral of Viral's Modifications - http://viralsmods.com
 (function() {
 	var awards = {
@@ -72,3 +73,4 @@
 	}
 	awards.start();
 })();
+//]]>
