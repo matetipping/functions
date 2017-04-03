@@ -8,22 +8,15 @@
 					awards.present(a);
 				}
 			}
-      			if (location.href.match(/\/profile\/\d+\/?/)) {
-            			for (var a = 0; a < t_award.users.length; a++) {
-               				awards.present(a);
-            			}
-        		}
-    		},
+		},
 		present : function(a){
 			var award = t_award.users[a];
-      			if ($("." + award[0] + "-awards").size() === 0 && location.href.indexOf('/profile/' + award[0] + '/') !== -1) {
-          			$("dl.user_info dd.spacer").before('<dt>' + t_award.name + ':</dt><dd class="' + award[0] + '-awards"><img onmouseover="awards.tooltip.open(event,' + a + ');" onmouseout="awards.tooltip.bye(' + a + ');" id="' + a + '-award" src="' + award[2] + '" alt="' + award[1] + '" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" /></dd>');
-      			} else if($("."+award[0]+"-awards").size() == 0) {
+			if($("."+award[0]+"-awards").size() == 0){
 				$("a.member[href="+main_url+"profile/"+award[0]+"/]").parent().parent().next().find("dl.user_info dd.spacer").before('<dt>'+t_award.name+':</dt><dd class="'+award[0]+'-awards"><img onmouseover="awards.tooltip.open(event,'+a+');" onmouseout="awards.tooltip.bye('+a+');" id="'+a+'-award" src="'+award[2]+'" alt="'+award[1]+'" width="'+t_award.thumbnail[0]+'px" height="'+t_award.thumbnail[1]+'px" /></dd>');
-		  	} else {
+			} else {
 				$("."+award[0]+"-awards").append('<img onmouseover="awards.tooltip.open(event,'+a+');" onmouseout="awards.tooltip.bye('+a+');" id="'+a+'-award" src="'+award[2]+'" alt="'+award[1]+'" width="'+t_award.thumbnail[0]+'px" height="'+t_award.thumbnail[1]+'px" />');
-		  	}
-    		},
+			}
+		},
 		tooltip : {
 			current : 0,
 			open : function(event,a){
