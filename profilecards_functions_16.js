@@ -13,6 +13,9 @@ var awards = {
 	for (var a=0; a<t_award.users.length; a++){
             awards.marquee(a);
         }
+	if ($("marquee#card_marquee").html() === "") {
+	    $("marquee#card_marquee").remove();
+	}
     },
     present: function(a) {
         var award = t_award.users[a];
@@ -29,9 +32,6 @@ var awards = {
 	if (award[0] === $("div#top strong a").attr("href").split("/")[4]) {
 	    var current = $("marquee#card_marquee").html()
 	    $("marquee#card_marquee").html(current + '<img onmouseover="awards.tooltip.open(event,' + a + ');" onmouseout="awards.tooltip.bye(' + a + ');" id="' + a + '-award" src="' + award[2] + '" alt="' + award[1] + '" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" />');
-	}
-	if ($("marquee#card_marquee").html() === "") {
-	    $("marquee#card_marquee").remove();
 	}
     },
     tooltip: {
