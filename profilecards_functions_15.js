@@ -10,7 +10,9 @@ var awards = {
                 awards.present(a);
             }
         }
-	awards.marquee(a);
+	for (var a=0; a<t_award.users.length; a++){
+            awards.marquee(a);
+        }
     },
     present: function(a) {
         var award = t_award.users[a];
