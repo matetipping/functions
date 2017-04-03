@@ -30,7 +30,7 @@ var awards = {
             if ($("#" + a + "-tooltip").size() === 0) $("body").append('<div id="' + a + '-tooltip" style="position:absolute;max-width:500px;"><table><thead><tr><th colspan="2">' + award[1] + '</th></tr></thead><tbody><tr><td><img src="' + award[2] + '" alt="' + award[1] + '" /></td><td>' + award[3] + '<hr /><strong>Received:</strong> ' + award[4] + '</td></tr></tbody></table></div>');
             var elem = document.getElementById(a + "-tooltip");
             elem.style.left = pos[0] + 10 + "px";
-            elem.style.top = pos[1] + 10 + "px";
+            elem.style.top = pos[1] - 250 + "px";
             awards.tooltip.current = a;
             document.onmousemove = awards.tooltip.update;
         },
@@ -39,7 +39,7 @@ var awards = {
             var elem = document.getElementById(awards.tooltip.current + "-tooltip");
             if (elem !== null) {
                 elem.style.left = pos[0] + 10 + "px";
-                elem.style.top = pos[1] + 10 + "px";
+                elem.style.top = pos[1] - 250 + "px";
             } else {
                 document.onmousemove = null;
             }
