@@ -471,7 +471,7 @@ function buyItem(itemID, userID, price) {
 				        zbids : [userID],
 				        info : {
 					          user : userID,
-					          message : options.message.replace(/%ITEMID%/gi, itemID),
+					          message : "I have purchased a card.",
 					          amount : price
 				        }
 			      });
