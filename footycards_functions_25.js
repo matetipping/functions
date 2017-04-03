@@ -474,9 +474,7 @@ function buyItem(itemID, userID, price) {
 					message : "I have purchased a card.",
 					amount : price
 				},
-				success: function(){
-					var bla = $("div.dynamo_content").text();
-					alert(bla);
+				complete: function(){
 					if (bla.includes("successful")) {
 						var img_a = randomise_card();
 						var img_b = img_a;
