@@ -493,5 +493,5 @@ function buyItem(itemID, userID, price) {
 	  $("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
 	  $("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
 	  $("div#card_choices").attr("style", "display: block");
-    $("button#button_purchasecard").attr("style", "display: none");
+    $("a#button_purchasecard").attr("style", "display: none");
 }
