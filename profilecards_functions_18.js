@@ -29,7 +29,7 @@ var awards = {
     },
     marquee: function(a) {
         var award = t_award.users[a];
-	if (award[0] === $("div#top strong a").attr("href").split("/")[4]) {
+	if (award[0] === Integer.parseInt($("div#top strong a").attr("href").split("/")[4])) {
 	    var current = $("marquee#card_marquee").html();
 	    $("marquee#card_marquee").html(current + '<img onmouseover="awards.tooltip.open(event,' + a + ');" onmouseout="awards.tooltip.bye(' + a + ');" id="' + a + '-award" src="' + award[2] + '" alt="' + award[1] + '" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" />');
 	}
