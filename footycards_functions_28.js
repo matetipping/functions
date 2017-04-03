@@ -476,7 +476,8 @@ function buyItem(itemID, userID, price) {
 				},
 				success: function(){
 					$("body").on("dynamo_loaded", function() {
-						if ($("div.dynamo_content").html().includes("successful")) {
+						alert($("div.dynamo_content").text());
+						if ($("div.dynamo_content").text().includes("successful")) {
 							var img_a = randomise_card();
 							var img_b = img_a;
 							var img_c = img_a;
