@@ -473,26 +473,28 @@ function buyItem(itemID, userID, price) {
 					user : userID,
 					message : "I have purchased a card.",
 					amount : price
+				},
+				success: function() {
+					if ($("div.dynamo_content").text().contains("successfully")) {
+						var img_a = randomise_card();
+						var img_b = img_a;
+						var img_c = img_a;
+						while (img_a === img_b) {
+							img_b = randomise_card();
+						}
+						do {
+							do {
+								img_c = randomise_card();
+							} while (img_b === img_c);
+						} while (img_a === img_c);
+						$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
+						$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
+						$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
+						$("div#card_choices").attr("style", "display: block");
+						$("a#button_purchasecard").attr("style", "display: none");
+					}
 				}
 			});
-			if ($("div.dynamo_content").text().contains("successfully")) {
-	        		var img_a = randomise_card();
-	  			var img_b = img_a;
-	  			var img_c = img_a;
-	  			while (img_a === img_b) {
-		    			img_b = randomise_card();
-	  			}
-	  			do {
-		    			do {
-            					img_c = randomise_card();
-        	    			} while (img_b === img_c);
-	  			} while (img_a === img_c);
-	  			$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
-	  			$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
-	  			$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
-	  			$("div#card_choices").attr("style", "display: block");
-    				$("a#button_purchasecard").attr("style", "display: none");
-			}
 		});
 	  }
 }
