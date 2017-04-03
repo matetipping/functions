@@ -474,29 +474,37 @@ function buyItem(itemID, userID, price) {
 						user : userID,
 						message : "I have purchased a card.",
 						amount : price
-					},
-					success: function() {
-						var img_a = randomise_card();
-						var img_b = img_a;
-						var img_c = img_a;
-						while (img_a === img_b) {
-							img_b = randomise_card();
-						}
-						do {
-							do {
-								img_c = randomise_card();
-							} while (img_b === img_c);
-						} while (img_a === img_c);
-						$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
-						$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
-						$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
-						$("div#card_choices").attr("style", "display: block");
-						$("a#button_purchasecard").attr("style", "display: none");
 					}
 				});
 			});
 		  }
 	  });
+	var timer = setInterval(function() {
+		var content_loader = $("div.dynamo_content").text();
+		if (content_loader.includes("successful")) {
+		    load_footy_cards();
+		    clearInterval(timer);
+		}
+	}, 100);
+}
+
+function load_footy_cards() {
+	var img_a = randomise_card();
+	var img_b = img_a;
+	var img_c = img_a;
+	while (img_a === img_b) {
+		img_b = randomise_card();
+	}
+	do {
+		do {
+			img_c = randomise_card();
+		} while (img_b === img_c);
+	} while (img_a === img_c);
+	$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
+	$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
+	$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
+	$("div#card_choices").attr("style", "display: block");
+	$("a#button_purchasecard").attr("style", "display: none");
 }
 
 function send_purchase(card_id) {
