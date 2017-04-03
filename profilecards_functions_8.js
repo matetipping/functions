@@ -27,7 +27,7 @@ var awards = {
             var award = t_award.users[a];
             var pos = awards.mouse.locate(event);
             awards.tooltip.coords = [pos[0], pos[1]];
-            if ($("#" + a + "-tooltip").size() === 0) $("body").append('<div id="' + a + '-tooltip" style="position:absolute;max-width:500px;"><table><thead><tr><th colspan="2">' + award[1] + '</th></tr></thead><tbody><tr><td><img src="' + award[2] + '" alt="' + award[1] + '" /></td><td>' + award[3] + '<hr /><strong>Received:</strong> ' + award[4] + '</td></tr></tbody></table></div>');
+            if ($("#" + a + "-tooltip").size() === 0) $("body").append('<div id="' + a + '-tooltip" style="position:absolute;max-width:500px; background: #08141E; border-radius: 20px; box-shadow: 0px 0px 1px #000; border: 1px solid #ED6030; color: #C3C9D7;"><table><thead><tr><th colspan="2">' + award[1] + '</th></tr></thead><tbody><tr><td><img src="' + award[2] + '" alt="' + award[1] + '" /></td><td>' + award[3] + '<hr /><strong>Received:</strong> ' + award[4] + '</td></tr></tbody></table></div>');
             var elem = document.getElementById(a + "-tooltip");
             elem.style.left = pos[0] + 10 + "px";
             elem.style.top = pos[1] - 250 + "px";
