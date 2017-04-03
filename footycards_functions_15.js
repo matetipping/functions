@@ -494,3 +494,31 @@ function buyItem(itemID, userID, price) {
     		$("a#button_purchasecard").attr("style", "display: none");
 	  }
 }
+
+function send_purchase(card_id) {
+    var card_img= $("span a#card_" + card_id + " img").attr("src");
+    var card_name = get_card_dets(card_img);
+    var confirmation = confirm("Are you sure you wish to select Card #" + card_name[0] + " - " + card_name[1] + "?");
+    if (confirmation) {
+        var card_id = $("div#top strong a").attr("href").split("/")[4];
+        var msg_content = '[' + card_id + ',"' + card_name[0] + ' - ' + card_name[1] + '","' + card_img + '","' + card_name[2] + '","2017"]'; 
+        var me = get_this_player();
+        var msg_title = me + ": Card " + card_name[0];
+        $.get(main_url + 'msg/?c=2', {}, function (data) {
+            var pm_xc = $("input[name=xc]",data).val();
+            var pm_secure = $("input[name=secure]",data).val();
+            $.post(main_url + 'msg/?c=3&sd=1', {
+                xc: pm_xc,
+                msg: 0,
+                convo: 0,
+                fwd: 0,
+                draft_edit: 0,
+                secure: pm_secure,
+                name: "Administrator",
+                title: msg_title,
+                post: msg_content
+            });
+        });
+        $("div#card_selector").html("<span>You have received:</span></br><img src='" + card_img + "'></br><span><b>" + card_name[0] + " - " + card_name[1] + "</b></span></br>It will be added to your account shortly.");
+    }
+}
