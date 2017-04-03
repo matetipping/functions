@@ -476,7 +476,8 @@ function buyItem(itemID, userID, price) {
 				        }
 			      });
 		    });
-		var img_a = randomise_card();
+		if ($("div.dynamo_content").text().contains("successfully")) {
+	        var img_a = randomise_card();
 	  	var img_b = img_a;
 	  	var img_c = img_a;
 	  	while (img_a === img_b) {
@@ -492,6 +493,7 @@ function buyItem(itemID, userID, price) {
 	  	$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
 	  	$("div#card_choices").attr("style", "display: block");
     		$("a#button_purchasecard").attr("style", "display: none");
+		}
 	  }
 }
 
