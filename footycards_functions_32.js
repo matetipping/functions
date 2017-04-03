@@ -459,26 +459,24 @@ function get_card_dets(img_url) {
 
 
 function buyItem(itemID, userID, price) {
-	  $("body").on("dynamo_loaded", function(e) {
-		  var symbol = dynamo.server.modules.currency.settings.symbol;
-		  var formatted_price = dynamo.toolbox.format_number(price);
-		  var confirmation = confirm("Buy a footy card for " + symbol + formatted_price + " coins?");
-		  if(confirmation) {
-			dynamo.module.load("currency", function() {
-				dynamo.tip.prompt.ini({
-					m : "currency",
-					p1 : "donate",
-					c : "finish",
-					zbids : [userID],
-					info : {
-						user : userID,
-						message : "I have purchased a card.",
-						amount : price
-					}
-				});
+	var symbol = dynamo.server.modules.currency.settings.symbol;
+	var formatted_price = dynamo.toolbox.format_number(price);
+	var confirmation = confirm("Buy a footy card for " + symbol + formatted_price + " coins?");
+	if(confirmation) {
+		dynamo.module.load("currency", function() {
+			dynamo.tip.prompt.ini({
+				m : "currency",
+				p1 : "donate",
+				c : "finish",
+				zbids : [userID],
+				info : {
+					user : userID,
+					message : "I have purchased a card.",
+					amount : price
+				}
 			});
-		  }
-	  });
+		});
+	}
 	var timer = setInterval(function() {
 		var content_loader = $("div.dynamo_content").text();
 		if (content_loader.includes("successful")) {
