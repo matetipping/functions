@@ -475,26 +475,26 @@ function buyItem(itemID, userID, price) {
 					amount : price
 				},
 				success: function(){
-					while ($("div.dynamo_content div.dynamo_loader").length() > 0) {
-					}
-					if ($("div.dynamo_content").text().includes("successful")) {
-						var img_a = randomise_card();
-						var img_b = img_a;
-						var img_c = img_a;
-						while (img_a === img_b) {
-							img_b = randomise_card();
-						}
-						do {
+					$("body").on("dynamo_loaded", function() {
+						if ($("div.dynamo_content").html().includes("successful")) {
+							var img_a = randomise_card();
+							var img_b = img_a;
+							var img_c = img_a;
+							while (img_a === img_b) {
+								img_b = randomise_card();
+							}
 							do {
-								img_c = randomise_card();
-							} while (img_b === img_c);
-						} while (img_a === img_c);
-						$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
-						$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
-						$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
-						$("div#card_choices").attr("style", "display: block");
-						$("a#button_purchasecard").attr("style", "display: none");
-					}
+								do {
+									img_c = randomise_card();
+								} while (img_b === img_c);
+							} while (img_a === img_c);
+							$("div#card_choices span a#card_1").html("<img src='" + img_a + "'>");
+							$("div#card_choices span a#card_2").html("<img src='" + img_b + "'>");
+							$("div#card_choices span a#card_3").html("<img src='" + img_c + "'>");
+							$("div#card_choices").attr("style", "display: block");
+							$("a#button_purchasecard").attr("style", "display: none");
+						}
+					});
 				}
 			});
 		});
