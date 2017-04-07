@@ -484,6 +484,7 @@ function buyItem(itemID, userID, price) {
 		if (content_loader.includes("successful")) {
 		    load_footy_cards();
 		    clearInterval(timer);
+		    $("div#exclusive_cards").hide();
 		}
 	}, 100);
 }
