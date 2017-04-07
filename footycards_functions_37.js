@@ -581,6 +581,7 @@ function send_exc_purchase(card_id, userID, price) {
                 });
             });
             $("div#card_selector").html("<span>You have received:</span></br><img src='" + card_img + "'></br><span><b>" + card_name[0] + " - " + card_name[1] + "</b></span></br>It will be added to your account shortly.");
+	    clearInterval(timer);
 	}
     }, 100);
 }
