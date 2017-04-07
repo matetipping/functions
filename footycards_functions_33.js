@@ -452,8 +452,10 @@ function get_card_dets(img_url) {
         return ["86", "Jess Dal Pos", "GWS Giants"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008934/card_87_d_pearce.png") {
         return ["87", "Daisy Pearce", "Melbourne Demons"];
-    } else {
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008935/card_88_e_blackburn.png") {
         return ["88", "Ellie Blackburn", "Western Bulldogs"];
+    } else {
+        return ["91", "Lance Franklin (250 Games)", "Sydney Swans"];
     }
 }
 
