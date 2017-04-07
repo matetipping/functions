@@ -34,8 +34,6 @@ var awards = {
 	    var c_num = award[1].split(" ");
 	    var c_number = parseInt(c_num[0]);
 	    alert(c_number);
-	    $("marquee#card_marquee img")[c_number - 1].attr('onmouseover', 'awards.tooltip.open(event,' + a + ');');
-	    $("marquee#card_marquee img")[c_number - 1].attr('onmouseout', 'awards.tooltip.bye(' + a + ')');
 	    $("marquee#card_marquee img")[c_number - 1].attr('id', a + '-award');
 	    $("marquee#card_marquee img")[c_number - 1].attr('src', award[2]);
 	    $("marquee#card_marquee img")[c_number - 1].attr('alt', award[1]);
