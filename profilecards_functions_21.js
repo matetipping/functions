@@ -32,7 +32,9 @@ var awards = {
         var award = t_award.users[a];
 	if ($("div#top strong a").attr("href").indexOf('/profile/' + award[0] + '/') !== -1) {
 	    var c_num = award[1].split(" ");
-	    $("marquee#card_marquee img")[c_num - 1].replaceWith('<img onmouseover="awards.tooltip.open(event,' + a + ');" onmouseout="awards.tooltip.bye(' + a + ');" id="' + a + '-award" src="' + award[2] + '" alt="' + award[1] + '" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" />');
+	    var c_number = parseInt(c_num[0]);
+	    alert(c_number);
+	    $("marquee#card_marquee img")[c_number - 1].replaceWith('<img onmouseover="awards.tooltip.open(event,' + a + ');" onmouseout="awards.tooltip.bye(' + a + ');" id="' + a + '-award" src="' + award[2] + '" alt="' + award[1] + '" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" />');
 	}
     },
     tooltip: {
