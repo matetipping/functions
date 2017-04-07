@@ -535,7 +535,7 @@ function send_purchase(card_id) {
     }
 }
 
-function send_exc_purchase(card_id, price) {
+function send_exc_purchase(card_id, userID, price) {
     var card_img= $("span a#card_" + card_id + " img").attr("src");
     var card_name = get_card_dets(card_img);
     var user_id = $("div#top strong a").attr("href").split("/")[4];
