@@ -10,12 +10,13 @@ var awards = {
                 awards.present(a);
             }
         }
+	for (var i=0; i<100; i++) {
+	    var current = $("marquee#card_marquee").html();
+	    $("marquee#card_marquee").html(current + '<img src="http://b3.ifrm.com/30609/91/0/p3009204/card_0_default.png" alt="Default Card" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" />');
+	}
 	for (var a=0; a<t_award.users.length; a++){
             awards.marquee(a);
         }
-	if ($("marquee#card_marquee").html() === "") {
-	    $("marquee#card_marquee").remove();
-	}
     },
     present: function(a) {
         var award = t_award.users[a];
@@ -30,8 +31,8 @@ var awards = {
     marquee: function(a) {
         var award = t_award.users[a];
 	if ($("div#top strong a").attr("href").indexOf('/profile/' + award[0] + '/') !== -1) {
-	    var current = $("marquee#card_marquee").html();
-	    $("marquee#card_marquee").html(current + '<img onmouseover="awards.tooltip.open(event,' + a + ');" onmouseout="awards.tooltip.bye(' + a + ');" id="' + a + '-award" src="' + award[2] + '" alt="' + award[1] + '" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" />');
+	    var c_num = award[1].split(" ");
+	    $("marquee#card_marquee img")[c_num - 1].replaceWith('<img onmouseover="awards.tooltip.open(event,' + a + ');" onmouseout="awards.tooltip.bye(' + a + ');" id="' + a + '-award" src="' + award[2] + '" alt="' + award[1] + '" width="' + t_award.thumbnail[0] + 'px" height="' + t_award.thumbnail[1] + 'px" />');
 	}
     },
     tooltip: {
