@@ -454,6 +454,8 @@ function get_card_dets(img_url) {
         return ["87", "Daisy Pearce", "Melbourne Demons"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3008935/card_88_e_blackburn.png") {
         return ["88", "Ellie Blackburn", "Western Bulldogs"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3012009/card_89_d_nicholls.png") {
+	return ["89", "Sir Doug Nicholls", "Indigenous Round, 2017"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3009200/card_91_l_franklin.png") {
         return ["91", "Lance Franklin (250 Games)", "Sydney Swans"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3010011/card_92_r_murphy.png") {
