@@ -460,6 +460,10 @@ function get_card_dets(img_url) {
         return ["91", "Lance Franklin (250 Games)", "Sydney Swans"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3010011/card_92_r_murphy.png") {
         return ["92", "Robert Murphy (300 Games)", "Western Bulldogs"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3012491/card_93_b_goddard.png") {
+	return ["93", "Brendon Goddard (300 Games)", "Essendon Bombers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3012492/card_101_j_terrington.png") {
+	return ["101", "Jono and Jeanille", "Scandal of the Week"];
     } else {
 	return [];
     }
