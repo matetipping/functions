@@ -466,6 +466,8 @@ function get_card_dets(img_url) {
         return ["94", "Gary Ablett (300 Games)", "Gold Coast Suns"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3014423/card_95_s_pendlebury.png") {
 	return ["95", "Scott Pendlebury (250 Games)", "Collingwood Magpies"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3014428/card_96_l_hodge.png") {
+	return ["96", "Luke Hodge (300 Games)", "Hawthorn Hawks"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3012492/card_101_j_terrington.png") {
 	return ["101", "Jono and Jeanille", "Scandal of the Week"];
     } else {
