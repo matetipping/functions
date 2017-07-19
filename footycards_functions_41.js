@@ -462,6 +462,10 @@ function get_card_dets(img_url) {
         return ["92", "Robert Murphy (300 Games)", "Western Bulldogs"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3012491/card_93_b_goddard.png") {
 	return ["93", "Brendon Goddard (300 Games)", "Essendon Bombers"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3014422/card_94_g_ablett.png") {
+        return ["94", "Gary Ablett (300 Games)", "Gold Coast Suns"];
+    } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3014423/card_95_s_pendlebury.png") {
+	return ["95", "Scott Pendlebury (250 Games)", "Collingwood Magpies"];
     } else if (img_url === "http://b3.ifrm.com/30609/91/0/p3012492/card_101_j_terrington.png") {
 	return ["101", "Jono and Jeanille", "Scandal of the Week"];
     } else {
