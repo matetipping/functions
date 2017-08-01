@@ -684,9 +684,6 @@ function load_prodata(player_name) {
                 if (improvement > 0) {
                     improvement = "+" + improvement;
                 }
-                alert(current_error);
-                alert(favouritism_error);
-                alert(improvement);
                 ladder_error = ladder_error + Math.abs(current_error);
                 ladder_favouritism_error = ladder_favouritism_error + Math.abs(favouritism_error);
                 ladder_improvement = ladder_improvement + improvement;
