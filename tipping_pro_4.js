@@ -687,6 +687,9 @@ function load_prodata(player_name) {
                 ladder_error = ladder_error + Math.abs(current_error);
                 ladder_favouritism_error = ladder_favouritism_error + Math.abs(favouritism_error);
                 ladder_improvement = Number(ladder_improvement) + Number(improvement);
+                if (ladder_improvement > 0) {
+                    ladder_improvement = "+" + ladder_improvement;
+                }
                 $("td#ladder_error_" + j).html(current_error);
                 $("td#ladder_position_" + j).html(team_position);
                 $("td#ladder_favouritism_" + j).html(favouritism);
