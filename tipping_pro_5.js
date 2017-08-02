@@ -1,6 +1,6 @@
 $(function () {
     var me = get_this_player();
-    var access = ["Administrator", "ciniboi_12", "Mann"];
+    var access = ["Administrator", "ciniboi_12", "Mann", "Alex Rowland", "Dannelboyz"];
     var i;
     var len = access.length;
     for (i=0; i < len; i++) {
