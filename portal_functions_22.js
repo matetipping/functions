@@ -144,12 +144,12 @@ if (form_script.form_id.length) {
 
 // sets the number of remaining bonus tips on the portal page.
 function set_bonus_remaining(player_name) {
-    if ((tipping_data.round === "F1") || (tipping_data.round === "F2") || (tipping_data.round === "F3")) {
+    var round_number = $("select#tipping_roundselector").value();
+    if ((round_number "F1") || (round_number === "F2") || (round_number === "F3")) {
         $("tr.finals").remove();
         $("h4#tipping_remaining_disp").remove();
         $("h4#tipping_remaining_scor").remove();
-        $("tipping_normsmithcheck").attr("value", "on");
-    } else if (tipping_data.round === "F4") {
+    } else if (round_number === "F4") {
         $("tr.grandfinal").remove();
         $("h4#tipping_remaining_disp").remove();
         $("h4#tipping_remaining_scor").remove();
