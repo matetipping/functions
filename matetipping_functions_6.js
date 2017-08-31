@@ -14,10 +14,19 @@ function get_ladder_tips(round_no, name) {
         }
     }
     
+    len = afl_data.fixtures.length;
+    var number_rounds = 0;
+    for (i = 0; i < len; i++) {
+        if (afl_data.fixtures[i][0] === tipping_data.round) {
+	    number_rounds ++;
+	    alert(number_rounds);
+	}
+    }
+    
     var return_tips = [round_no, name];
     var scale_factor = 3;
     
-    for (i = 0; i < ((results.length - 8)/2); i++) {
+    for (i = 0; i < number_rounds; i++) {
         var first_team = round_fixtures[i][1];
         var second_team = round_fixtures[i][2];
         var first_pos = ladder_tips.indexOf(first_team);
