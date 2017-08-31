@@ -144,16 +144,20 @@ if (form_script.form_id.length) {
 
 // sets the number of remaining bonus tips on the portal page.
 function set_bonus_remaining(player_name) {
-    var bonuses = get_bonus_tip_count(player_name);
-    var count_disp = bonuses[0];
-    var count_scor = bonuses[1];
-    $("h4#tipping_remaining_disp").html(count_disp + "/10 used:");
-    $("h4#tipping_remaining_scor").html(count_scor + "/10 used:");
     if ((tipping_data.round === "F1") || (tipping_data.round === "F2") || (tipping_data.round === "F3")) {
         $("tr.finals").remove();
+        $("h4#tipping_remaining_disp").remove();
+        $("h4#tipping_remaining_scor").remove();
     } else if (tipping_data.round === "F4") {
         $("tr.grandfinal").remove();
+        $("h4#tipping_remaining_disp").remove();
+        $("h4#tipping_remaining_scor").remove();
     } else {
+        var bonuses = get_bonus_tip_count(player_name);
+        var count_disp = bonuses[0];
+        var count_scor = bonuses[1];
+        $("h4#tipping_remaining_disp").html(count_disp + "/10 used:");
+        $("h4#tipping_remaining_scor").html(count_scor + "/10 used:");
         $("tr.homeaway").remove();
         if (count_disp >= 10) {
             $("input#tipping_player_disposals").parents('tr').hide();
