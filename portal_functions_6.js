@@ -352,4 +352,10 @@ $(function () {
     $("select#tipping_roundselector").val(tipping_data.round);
     set_all_matches(tipping_data.round);
     change_counter(tipping_data.round);
+    if (tipping_data.round === "F1") {
+        $("tr.F").remove();
+    } else if (tipping_data.round === "F4") {
+        $("tr.G").remove();
+    } else {
+    }
 });
