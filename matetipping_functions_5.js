@@ -17,7 +17,7 @@ function get_ladder_tips(round_no, name) {
     var return_tips = [round_no, name];
     var scale_factor = 3;
     
-    for (i = 0; i < (results.length - 8); i++) {
+    for (i = 0; i < ((results.length - 8)/2); i++) {
         var first_team = round_fixtures[i][1];
         var second_team = round_fixtures[i][2];
         var first_pos = ladder_tips.indexOf(first_team);
