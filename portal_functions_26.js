@@ -362,8 +362,8 @@ function set_up_countdown(target_date) {
 }
 
 $(function () {
-    set_bonus_remaining(get_this_player());
     $("select#tipping_roundselector").val(tipping_data.round);
     set_all_matches(tipping_data.round);
+    set_bonus_remaining(get_this_player());
     change_counter(tipping_data.round);
 });
