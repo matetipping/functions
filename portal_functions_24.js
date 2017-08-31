@@ -145,7 +145,7 @@ if (form_script.form_id.length) {
 // sets the number of remaining bonus tips on the portal page.
 function set_bonus_remaining(player_name) {
     var round_number = $("select#tipping_roundselector").val();
-    if ((round_number "F1") || (round_number === "F2") || (round_number === "F3")) {
+    if ((round_number === "F1") || (round_number === "F2") || (round_number === "F3")) {
         $("tr.finals").remove();
         $("h4#tipping_remaining_disp").remove();
         $("h4#tipping_remaining_scor").remove();
