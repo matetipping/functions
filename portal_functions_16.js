@@ -356,7 +356,7 @@ $(function () {
     } else if (tipping_data.round === "F4") {
         $("tr.grandfinal").remove();
     } else {
-        $("tr.homeaway".remove();
+        $("tr.homeaway").remove();
     }
     change_counter(tipping_data.round);
 });
