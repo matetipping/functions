@@ -353,10 +353,14 @@ $(function () {
     set_all_matches(tipping_data.round);
     if (tipping_data.round === "F1") {
         alert("A");
-        $("#form_spec tr").removeClass("F");
+        $("#form_spec tr").each(function() {
+            $(this).removeClass("F");
+        });
     } else if (tipping_data.round === "F4") {
         alert("B");
-        $("#form_spec tr").removeClass("G");
+        $("#form_spec tr").each(function() {
+            $(this).removeClass("G");
+        });
     } else {
         alert("C");
     }
