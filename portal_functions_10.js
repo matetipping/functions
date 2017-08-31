@@ -353,7 +353,7 @@ $(function () {
     set_all_matches(tipping_data.round);
     if (tipping_data.round === "F1") {
         alert("A");
-        $("tr.F").remove();
+        $("tr.F.G").remove();
     } else if (tipping_data.round === "F4") {
         alert("B");
         $("tr.G").remove();
