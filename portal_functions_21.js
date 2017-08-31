@@ -148,7 +148,7 @@ function set_bonus_remaining(player_name) {
         $("tr.finals").remove();
         $("h4#tipping_remaining_disp").remove();
         $("h4#tipping_remaining_scor").remove();
-        $("tipping_normsmithcheck").attr('checked', 'checked');
+        $("tipping_normsmithcheck").attr("value", "on");
     } else if (tipping_data.round === "F4") {
         $("tr.grandfinal").remove();
         $("h4#tipping_remaining_disp").remove();
