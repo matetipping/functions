@@ -251,9 +251,9 @@ function set_all_matches(round_no) {
         var round_number = round_no.substring(1);
         var round_title = round_title.concat(round_number);
     } else if (round_no === "F1") {
-        round_title = "Qualifying/Elimination Final";
+        round_title = "Finals 1";
     } else if (round_no === "F2") {
-        round_title = "Semi-Final";
+        round_title = "Semi-Finals";
     } else if (round_no === "F3") {
         round_title = "Preliminary Final";
     } else {
