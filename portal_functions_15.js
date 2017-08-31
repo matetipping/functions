@@ -351,13 +351,12 @@ $(function () {
     set_bonus_remaining(get_this_player());
     $("select#tipping_roundselector").val(tipping_data.round);
     set_all_matches(tipping_data.round);
-    if (tipping_data.round === "F1") {
+    if ((tipping_data.round === "F1") || (tipping_data.round === "F2") || (tipping_data.round === "F3")) {
         $("tr.finals").remove();
     } else if (tipping_data.round === "F4") {
-        alert("B");
-        $("tr").remove();
+        $("tr.grandfinal").remove();
     } else {
-        alert("C");
+        $("tr.homeaway".remove();
     }
     change_counter(tipping_data.round);
 });
