@@ -19,7 +19,6 @@ function get_ladder_tips(round_no, name) {
     for (i = 0; i < len; i++) {
         if (afl_data.fixtures[i][0] === tipping_data.round) {
 	    number_rounds ++;
-	    alert(number_rounds);
 	}
     }
     
@@ -232,6 +231,7 @@ function calculate_scores(player_name, opponent, results_name, round_no, tips_fu
     var scale_fac = 1;
     for (i = 1; i <= round_length; i++) {
         if (round_no === "F1") {
+		alert("test");
 		if ((i == 1) || (i == 3) || (i == 5) || (i == 7)) {
 			scale_fac = 0.75;
 		} else if ((i == 2) || (i == 4) || (i == 6) || (i == 8)) {
