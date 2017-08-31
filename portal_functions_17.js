@@ -149,11 +149,18 @@ function set_bonus_remaining(player_name) {
     var count_scor = bonuses[1];
     $("h4#tipping_remaining_disp").html(count_disp + "/10 used:");
     $("h4#tipping_remaining_scor").html(count_scor + "/10 used:");
-    if (count_disp >= 10) {
-        $("input#tipping_player_disposals").parents('tr').hide();
-    }
-    if (count_scor >= 10) {
-        $("input#tipping_player_scorer").parents('tr').hide();
+    if ((tipping_data.round === "F1") || (tipping_data.round === "F2") || (tipping_data.round === "F3")) {
+        $("tr.finals").remove();
+    } else if (tipping_data.round === "F4") {
+        $("tr.grandfinal").remove();
+    } else {
+        $("tr.homeaway").remove();
+        if (count_disp >= 10) {
+            $("input#tipping_player_disposals").parents('tr').hide();
+        }
+        if (count_scor >= 10) {
+            $("input#tipping_player_scorer").parents('tr').hide();
+        }
     }
 }
 
@@ -351,12 +358,5 @@ $(function () {
     set_bonus_remaining(get_this_player());
     $("select#tipping_roundselector").val(tipping_data.round);
     set_all_matches(tipping_data.round);
-    if ((tipping_data.round === "F1") || (tipping_data.round === "F2") || (tipping_data.round === "F3")) {
-        $("tr.finals").remove();
-    } else if (tipping_data.round === "F4") {
-        $("tr.grandfinal").remove();
-    } else {
-        $("tr.homeaway").remove();
-    }
     change_counter(tipping_data.round);
 });
