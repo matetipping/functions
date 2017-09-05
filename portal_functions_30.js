@@ -371,6 +371,7 @@ $('input[list]').on('input', function(e) {
       input.attr('list', datalist);
   }
 });
+alert(5);
 var round_number = $("select#tipping_roundselector").val();
 if ((round_number === "F1") || (round_number === "F2") || (round_number === "F3")) {
     var form_script = {
