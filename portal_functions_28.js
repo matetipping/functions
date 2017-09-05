@@ -360,6 +360,138 @@ function set_up_countdown(target_date) {
     }
 }
 
+
+$('input[list]').on('input', function(e) {
+  var input = $(e.target),
+      datalist = input.attr('data-list');
+
+  if(input.val().length < 3) {
+      input.attr('list', '');
+  } else {
+      input.attr('list', datalist);
+  }
+});
+
+var round_number = $("select#tipping_roundselector").val();
+if ((round_number === "F1") || (round_number === "F2") || (round_number === "F3")) {
+    var form_script = {
+        form_id: $('#tipping_form'),
+        status_id: $('#send_form'),
+        specific_id: $('#form_spec'),
+        enable_guests: false,
+        pm: {
+            enabled: true, // Does not work for guests
+            user: "Administrator", // 1 user only
+            title: "{{1}}, 2017: {{user_name}}",
+            content: '["{{2}}", "{{user_name}}", "{{3}}", {{4}}, "{{5}}", {{6}}, "{{7}}", {{8}}, "{{9}}", {{10}}, "{{11}}", {{12}}, "{{13}}", {{14}}, "{{15}}", {{16}}, "{{17}}", {{18}}, "{{19}}", "", "{{20}}", "", "", ""]'
+        },
+        topic: {
+            enabled: true,
+            forum_id: 3204546, // 1 id only
+            title: "{{1}}, 2017: {{user_name}}",
+            description: "Weekly Tips",
+            content: "[b]{{user_name}}[/b]{{n}}({{3}}) by {{4}}{{n}}({{5}}) by {{6}}{{n}}({{7}}) by {{8}}{{n}}({{9}}) by {{10}}{{n}}({{11}}) by {{12}}{{n}}({{13}}) by {{14}}{{n}}({{15}}) by {{16}}{{n}}({{17}}) by {{18}}{{n}}[b]Disposals:[/b] {{19}}{{n}}[b]Scorer:[/b] {{20}}"
+        },
+        statuses: {
+            not_logged_in: "You must be a registered tipper for the 2017 season to use this feature.", // Used if enable_guests: false 
+            first: "Processing submission...",
+            second: "Submitting tips...",
+            done: "Tips have been submitted."
+        },
+        submission_formatting: {
+            separator: '',
+
+            before_all: '',
+            after_all: '',
+
+            before_question: '',
+            after_question: '',
+
+            before_response: '',
+            after_response: ''
+        },
+        possible_elements: 'input, textarea, select' // For the second column of table; .val() must work on it
+    };
+} else if (round_number === "F4") {
+    var form_script = {
+        form_id: $('#tipping_form'),
+        status_id: $('#send_form'),
+        specific_id: $('#form_spec'),
+        enable_guests: false,
+        pm: {
+            enabled: true, // Does not work for guests
+            user: "Administrator", // 1 user only
+            title: "{{1}}, 2017: {{user_name}}",
+            content: '["{{2}}", "{{user_name}}", "{{3}}", {{4}}, "{{5}}", {{6}}, "{{7}}", {{8}}, "{{9}}", {{10}}, "{{11}}", "", "{{12}}", "", "", ""]'
+        },
+        topic: {
+            enabled: true,
+            forum_id: 3204546, // 1 id only
+            title: "{{1}}, 2017: {{user_name}}",
+            description: "Weekly Tips",
+            content: "[b]{{user_name}}[/b]{{n}}({{3}}) by {{4}}{{n}}({{5}}) by {{6}}{{n}}({{7}}) by {{8}}{{n}}({{9}}) by {{10}}{{n}}[b]Disposals:[/b] {{11}}{{n}}[b]Scorer:[/b] {{12}}"
+        },
+        statuses: {
+            not_logged_in: "You must be a registered tipper for the 2017 season to use this feature.", // Used if enable_guests: false 
+            first: "Processing submission...",
+            second: "Submitting tips...",
+            done: "Tips have been submitted."
+        },
+        submission_formatting: {
+            separator: '',
+
+            before_all: '',
+            after_all: '',
+
+            before_question: '',
+            after_question: '',
+
+            before_response: '',
+            after_response: ''
+        },
+        possible_elements: 'input, textarea, select' // For the second column of table; .val() must work on it
+    };
+} else {
+    var form_script = {
+        form_id: $('#tipping_form'),
+        status_id: $('#send_form'),
+        specific_id: $('#form_spec'),
+        enable_guests: false,
+        pm: {
+            enabled: true, // Does not work for guests
+            user: "Administrator", // 1 user only
+            title: "{{1}}, 2017: {{user_name}}",
+            content: '["{{2}}", "{{user_name}}", "{{3}}", {{4}}, "{{5}}", {{6}}, "{{7}}", {{8}}, "{{9}}", {{10}}, "{{11}}", {{12}}, "{{13}}", {{14}}, "{{15}}", {{16}}, "{{17}}", {{18}}, "{{19}}", {{20}}, "{{21}}", "", "{{22}}", "", "", ""]'
+        },
+        topic: {
+            enabled: true,
+            forum_id: 3204546, // 1 id only
+            title: "{{1}}, 2017: {{user_name}}",
+            description: "Weekly Tips",
+            content: "[b]{{user_name}}[/b]{{n}}({{3}}) by {{4}}{{n}}({{5}}) by {{6}}{{n}}({{7}}) by {{8}}{{n}}({{9}}) by {{10}}{{n}}({{11}}) by {{12}}{{n}}({{13}}) by {{14}}{{n}}({{15}}) by {{16}}{{n}}({{17}}) by {{18}}{{n}}({{19}}) by {{20}}{{n}}[b]Disposals:[/b] {{21}}{{n}}[b]Scorer:[/b] {{22}}"
+        },
+        statuses: {
+            not_logged_in: "You must be a registered tipper for the 2017 season to use this feature.", // Used if enable_guests: false 
+            first: "Processing submission...",
+            second: "Submitting tips...",
+            done: "Tips have been submitted."
+        },
+        submission_formatting: {
+            separator: '',
+
+            before_all: '',
+            after_all: '',
+
+            before_question: '',
+            after_question: '',
+
+            before_response: '',
+            after_response: ''
+        },
+        possible_elements: 'input, textarea, select' // For the second column of table; .val() must work on it
+    };
+}
+
 $(function () {
     $("select#tipping_roundselector").val(tipping_data.round);
     set_all_matches(tipping_data.round);
