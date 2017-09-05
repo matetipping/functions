@@ -497,6 +497,5 @@ $(function () {
     $("select#tipping_roundselector").val(tipping_data.round);
     set_all_matches(tipping_data.round);
     set_bonus_remaining(get_this_player());
-    set_form();
     change_counter(tipping_data.round);
 });
