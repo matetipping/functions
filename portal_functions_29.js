@@ -360,7 +360,7 @@ function set_up_countdown(target_date) {
     }
 }
 
-
+function set_form() {
 $('input[list]').on('input', function(e) {
   var input = $(e.target),
       datalist = input.attr('data-list');
@@ -371,7 +371,6 @@ $('input[list]').on('input', function(e) {
       input.attr('list', datalist);
   }
 });
-
 var round_number = $("select#tipping_roundselector").val();
 if ((round_number === "F1") || (round_number === "F2") || (round_number === "F3")) {
     var form_script = {
@@ -491,10 +490,12 @@ if ((round_number === "F1") || (round_number === "F2") || (round_number === "F3"
         possible_elements: 'input, textarea, select' // For the second column of table; .val() must work on it
     };
 }
+}
 
 $(function () {
     $("select#tipping_roundselector").val(tipping_data.round);
     set_all_matches(tipping_data.round);
     set_bonus_remaining(get_this_player());
+    set_form();
     change_counter(tipping_data.round);
 });
