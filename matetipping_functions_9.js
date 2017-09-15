@@ -241,6 +241,8 @@ function calculate_scores(player_name, opponent, results_name, round_no, tips_fu
 			scale_fac = 0.5;
 		} else if ((i == 4) || (i == 8)) {
 			scale_fac = 2;
+		} else {
+		        scale_fac = 1;
 		}
 	} else if (round_no === "F4") {
 		if ((i == 1) || (i == 3)) {
