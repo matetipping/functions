@@ -124,6 +124,7 @@ function set_breakdown(me, them) {
         if (typeof player_tips[len - 3] === "number") {
             $("td#playerscore_2a").html(player_tips[len - 3]);
         }
+	alert(player_tips[len - 2]);
         if (player_tips[len - 2].length > 0) {
             $("td#player_3a").html("N: " + player_tips[len - 2]);
         }
