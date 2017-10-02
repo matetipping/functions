@@ -19,7 +19,7 @@ function show_html() {
 function load_prodata(player_name) {
     if (player_name !== "--") {
         var current_round = tipping_data.round;
-        var rounds = ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "B1", "B2", "R14", "R15", "R16", "R17", "R18", "R19", "R20", "R21", "R22", "R23", "F1", "F2", "F3", "F4"];
+        var rounds = ["R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8", "R9", "R10", "B1", "B2", "R14", "R15", "R16", "R17", "R18", "R19", "R20", "R21", "R22", "R23"];
         var i;
         var len = rounds.length;
         var access_rounds = [];
