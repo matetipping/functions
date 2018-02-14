@@ -137,18 +137,18 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
     if (player1_diff > player2_diff) {
         player2_score = player1_diff - player2_diff;
         player1_score = 0;
-        if ((player1_team === result_team) && (player2_team !== result_team)) {
-            player2_score = player2_score / 2;
-        }
+//	if ((player1_team === result_team) && (player2_team !== result_team)) {
+//		player2_score = player2_score / 2;
+//	}
         if (player2_diff === 0) {
             player2_score = player2_score * 2;
         }
     } else {
         player1_score = player2_diff - player1_diff;
         player2_score = 0;
-        if ((player2_team === result_team) && (player1_team !== result_team)) {
-            player1_score = player1_score / 2;
-        }
+//	if ((player2_team === result_team) && (player1_team !== result_team)) {
+//		player1_score = player1_score / 2;
+//	}
         if (player1_diff === 0) {
             player1_score = player1_score * 2;
         }
@@ -157,6 +157,19 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
     // scales player scores
     player1_score = Math.floor(player1_score * scaling + 0.5);
     player2_score = Math.floor(player2_score * scaling + 0.5);
+
+    // as of 2018, adds 5 points per correct team tip and subtracts 5 per incorrect team tip.
+    if (player1_team == result_team) {
+        player1_score = player1_score + 5;
+    } else if (result_marg != 0) {
+        player1_score = player1_score - 5;
+    }
+    if (player2_team == result_team) {
+        player2_score = player2_score + 5;
+    } else if (result_marg != 0) {
+	player2_score = player2_score - 5;
+    }
+	
     var scores = [player1_score, player2_score];
     return scores;
 }
@@ -230,29 +243,29 @@ function calculate_scores(player_name, opponent, results_name, round_no, tips_fu
     var i;
     var scale_fac = 1;
     for (i = 1; i <= round_length; i++) {
-        if (round_no === "F1") {
-		if ((i == 1) || (i == 3) || (i == 5) || (i == 7)) {
-			scale_fac = 0.75;
-		} else if ((i == 2) || (i == 4) || (i == 6) || (i == 8)) {
-			scale_fac = 1.5;
-		}
-	} else if ((round_no === "F2") || (round_no === "F3")) {
-		if ((i == 1) || (i == 3) || (i == 5) || (i == 7)) {
-			scale_fac = 0.5;
-		} else if ((i == 4) || (i == 8)) {
-			scale_fac = 2;
-		} else {
-		        scale_fac = 1;
-		}
-	} else if (round_no === "F4") {
-		if ((i == 1) || (i == 3)) {
-			scale_fac = 0.75;
-		} else if ((i == 2)) {
-			scale_fac = 1.5;
-		} else if ((i == 4)) {
-			scale_fac = 3;
-		}
-	}
+//        if (round_no === "F1") {
+//		if ((i == 1) || (i == 3) || (i == 5) || (i == 7)) {
+//			scale_fac = 0.75;
+//		} else if ((i == 2) || (i == 4) || (i == 6) || (i == 8)) {
+//			scale_fac = 1.5;
+//		}
+//	} else if ((round_no === "F2") || (round_no === "F3")) {
+//		if ((i == 1) || (i == 3) || (i == 5) || (i == 7)) {
+//			scale_fac = 0.5;
+//		} else if ((i == 4) || (i == 8)) {
+//			scale_fac = 2;
+//		} else {
+//		        scale_fac = 1;
+//		}
+//	} else if (round_no === "F4") {
+//		if ((i == 1) || (i == 3)) {
+//			scale_fac = 0.75;
+//		} else if ((i == 2)) {
+//			scale_fac = 1.5;
+//		} else if ((i == 4)) {
+//			scale_fac = 3;
+//		}
+//	}
 	comparison = compare_player_tips(player_tips, opponent_tips, results, i, scale_fac);
         player_total = player_total + comparison[0];
         opponent_total = opponent_total + comparison[1];
