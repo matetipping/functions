@@ -161,12 +161,12 @@ function compare_player_tips(player1, player2, result, game_no, scaling) {
     // as of 2018, adds 5 points per correct team tip and subtracts 5 per incorrect team tip.
     if (player1_team == result_team) {
         player1_score = player1_score + 5;
-    } else if (result_marg != 0) {
+    } else {
         player1_score = player1_score - 5;
     }
     if (player2_team == result_team) {
         player2_score = player2_score + 5;
-    } else if (result_marg != 0) {
+    } else {
 	player2_score = player2_score - 5;
     }
 	
