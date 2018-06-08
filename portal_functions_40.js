@@ -5,18 +5,18 @@ Feel free to edit/redistribute */
 if (form_script.form_id.length) {
     var i;
     var leng = tipping_data.tips.length;
-    var disp_string = "Disposals Used:\n";
-    var scorer_string = "Scorers Used:\n";
+    var disp_string = ";
+    var scorer_string = ";
     for (i = 0; i < leng; i++) {
         if (tipping_data.tips[i][1] == get_this_player() && typeof(tipping_data.tips[i][tipping_data.tips[i].length - 5]) == "number") {
-            disp_string = disp_string + tipping_data.tips[i][tipping_data.tips[i].length - 6] + "\n";
+            disp_string = disp_string + tipping_data.tips[i][tipping_data.tips[i].length - 6] + "<br>";
         }
         if (tipping_data.tips[i][1] == get_this_player() && typeof(tipping_data.tips[i][tipping_data.tips[i].length - 3]) == "number") {
-            scorer_string = scorer_string + tipping_data.tips[i][tipping_data.tips[i].length - 4] + "\n";
+            scorer_string = scorer_string + tipping_data.tips[i][tipping_data.tips[i].length - 4] + "<br>";
         }
     }
-    $("div.disposals_used").text(disp_string);
-    $("div.scorers_used").text(scorer_string);
+    $("div.disposals_used").html(disp_string);
+    $("div.scorers_used").html(scorer_string);
     form_script.form_id.submit(function (e) {
         e.returnValue = (e.preventDefault && e.preventDefault()) && false;
 
