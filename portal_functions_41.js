@@ -5,8 +5,8 @@ Feel free to edit/redistribute */
 if (form_script.form_id.length) {
     var i;
     var leng = tipping_data.tips.length;
-    var disp_string = ";
-    var scorer_string = ";
+    var disp_string = "";
+    var scorer_string = "";
     for (i = 0; i < leng; i++) {
         if (tipping_data.tips[i][1] == get_this_player() && typeof(tipping_data.tips[i][tipping_data.tips[i].length - 5]) == "number") {
             disp_string = disp_string + tipping_data.tips[i][tipping_data.tips[i].length - 6] + "<br>";
