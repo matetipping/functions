@@ -286,6 +286,23 @@ function set_all_matches(round_no) {
     }
 }
 
+function show_bonuses_used() {
+    var i;
+    var leng = tipping_data.tips;
+    var disp_string = "Disposals Used:\n";
+    var scorer_string = "Scorers Used:\n";
+    for (i = 0; i < leng; i++) {
+        if (tipping_data.tips[i][0] == get_this_player() && typeof(tipping_data.tips[i][tipping_data.tips[i].length - 5]) == "number")) {
+            disp_string = disp_string + tipping_data.tips[i][tipping_data.tips[i].length - 6] + "\n";
+        }
+        if (tipping_data.tips[i][0] == get_this_player() && typeof(tipping_data.tips[i][tipping_data.tips[i].length - 3]) == "number")) {
+            scorer_string = scorer_string + tipping_data.tips[i][tipping_data.tips[i].length - 4] + "\n";
+        }
+    }
+    $("div.disposals_used").text(disp_string);
+    $("div.scorers_used").text(scorer_string);
+}
+
 // changes the players in a match when the round is changed.
 function change_game_players(round_no) {
     var me = get_this_player();
