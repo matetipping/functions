@@ -4,7 +4,7 @@ Feel free to edit/redistribute */
 
 if (form_script.form_id.length) {
     var i;
-    var leng = tipping_data.tips;
+    var leng = tipping_data.tips.length;
     var disp_string = "Disposals Used:\n";
     var scorer_string = "Scorers Used:\n";
     for (i = 0; i < leng; i++) {
