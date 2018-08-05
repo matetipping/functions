@@ -243,29 +243,6 @@ function calculate_scores(player_name, opponent, results_name, round_no, tips_fu
     var i;
     var scale_fac = 1;
     for (i = 1; i <= round_length; i++) {
-//        if (round_no === "F1") {
-//		if ((i == 1) || (i == 3) || (i == 5) || (i == 7)) {
-//			scale_fac = 0.75;
-//		} else if ((i == 2) || (i == 4) || (i == 6) || (i == 8)) {
-//			scale_fac = 1.5;
-//		}
-//	} else if ((round_no === "F2") || (round_no === "F3")) {
-//		if ((i == 1) || (i == 3) || (i == 5) || (i == 7)) {
-//			scale_fac = 0.5;
-//		} else if ((i == 4) || (i == 8)) {
-//			scale_fac = 2;
-//		} else {
-//		        scale_fac = 1;
-//		}
-//	} else if (round_no === "F4") {
-//		if ((i == 1) || (i == 3)) {
-//			scale_fac = 0.75;
-//		} else if ((i == 2)) {
-//			scale_fac = 1.5;
-//		} else if ((i == 4)) {
-//			scale_fac = 3;
-//		}
-//	}
 	comparison = compare_player_tips(player_tips, opponent_tips, results, i, scale_fac);
         player_total = player_total + comparison[0];
         opponent_total = opponent_total + comparison[1];
